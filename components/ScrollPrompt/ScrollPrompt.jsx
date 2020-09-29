@@ -1,6 +1,6 @@
 import React from "react"
-import VertLine from "./vert-line.svg"
-import PromptText from "./prompt-text.svg"
+import VertLine from "./assets/vert-line.svg"
+import PromptText from "./assets/prompt-text.svg"
 import styled from "styled-components"
 
 const Container = styled.div`

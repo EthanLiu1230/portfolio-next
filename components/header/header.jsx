@@ -1,7 +1,7 @@
 import React from 'react';
-import HoverLink from './hover-link';
+import StyledLink from '../StyledLink/StyledLink';
 import styled from 'styled-components';
-import { ContentMarginX } from '../styles/utils';
+import { ContentMarginX } from '../../styles/utils';
 import Link from 'next/link';
 
 const Container = styled.header`
@@ -38,8 +38,8 @@ const Header = () => (
   <Container>
     <Logo>Ethan.Liu</Logo>
     <LinkGroup>
-      <Link href={`/`}><HoverLink>my work</HoverLink></Link>
-      <Link href={`/`}><HoverLink>get in touch</HoverLink></Link>
+      <Link href={`/my-work`}><StyledLink>my work</StyledLink></Link>
+      <Link href={`/`}><StyledLink>get in touch</StyledLink></Link>
     </LinkGroup>
   </Container>
 );

@@ -17,3 +17,12 @@ export const ContentMarginY = css`
     margin-bottom: 4rem;
   }
 `;
+
+export const defaultTheme = {
+  colors: {
+    primary: '#F9EFE7',
+    text1: '#000000',
+    text2: '#b7b4b9',
+    highlight: '#ffe872'
+  }
+};
