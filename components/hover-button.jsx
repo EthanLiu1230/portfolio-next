@@ -1,13 +1,12 @@
-import React from "react"
-import { navigate } from "gatsby"
+import React from 'react';
 
-import styled from "styled-components"
+import styled from 'styled-components';
 
 const Container = styled.div`
   width: 209px;
   height: 67px;
   position: relative;
-`
+`;
 
 const Button = styled.button`
   width: 201px;
@@ -37,28 +36,28 @@ const Button = styled.button`
     top: 8px;
     left: 8px;
   }
-`
+`;
 
 const StrokeBox = styled.div`
   width: 201px;
   height: 59px;
-  border: 3px solid #000000;
+  border: 3px solid black;
   box-sizing: border-box;
   
   position: absolute;
   top: 8px;
   left: 8px;
-`
+`;
 
-const HoverButton = ({ children, to }) => (
+const HoverButton = ({ children }) => (
   <Container>
-    <Button onClick={() => navigate(to)}>{children}</Button>
+    <Button>{children}</Button>
     <StrokeBox/>
   </Container>
-)
+);
 
 HoverButton.defaultProps = {
-  children: "See my work"
-}
+  children: 'See my work'
+};
 
-export default HoverButton
+export default HoverButton;

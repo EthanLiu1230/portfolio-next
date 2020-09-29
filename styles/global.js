@@ -1,11 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-const colors = {
-  background: '#F9EFE7',
-  grey: '#b7b4b9',
-  text: '#000000'
-};
-
 const GlobalStyle = createGlobalStyle`
   
   body {
@@ -16,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: Mulish, sans-serif;
     font-size: 16px; /* 15px - 20px for main body text */
     line-height: 1.3; /* 1.2 - 1.45 */
-    color: ${colors.text};
+    color: ${({ theme }) => theme.colors.text1};
     @media (max-width: 768px) {
       font-size: 14px;
     }
@@ -42,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.1;
     letter-spacing: .2em;
     text-transform: uppercase;
-    color: ${colors.grey};
+    color: ${({ theme }) => theme.colors.text2};
     margin-bottom: 1rem;
   }
   
