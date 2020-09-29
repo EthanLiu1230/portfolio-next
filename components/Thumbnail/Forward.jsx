@@ -1,5 +1,5 @@
 import React from 'react';
-import ForwardArrow from './forward-arrow.svg';
+import ForwardArrow from './assets/ForwardArrow.svg';
 import styled from 'styled-components';
 
 const Container = styled.div`

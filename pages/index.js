@@ -5,7 +5,7 @@ import CtaButton from '../components/CtaButton/CtaButton';
 import Link from 'next/link';
 import { ContentMarginX, ContentMarginY } from '../styles/utils';
 import Tag from '../components/tag';
-import Thumbnail from '../components/thumbnail/thumbnail';
+import Thumbnail from '../components/Thumbnail/Thumbnail';
 
 const GridLayout = styled.div`
   ${ContentMarginX};

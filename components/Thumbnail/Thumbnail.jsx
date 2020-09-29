@@ -1,6 +1,6 @@
 import React from 'react';
-import Dots from './dots.svg';
-import Forward from './forward/forward';
+import Dots from './assets/Dots.svg';
+import Forward from './Forward';
 
 import styled from 'styled-components';
 
@@ -69,7 +69,7 @@ const Thumbnail = ({ image }) => (
 );
 
 Thumbnail.defaultProps = {
-  image: '/images/thumbnail.png'
+  image: '/images/Thumbnail.png'
 };
 
 export default Thumbnail;
