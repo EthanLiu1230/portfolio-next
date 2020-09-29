@@ -11,10 +11,16 @@ const ImageWrapper = styled.div`
   
   background: ${({ theme }) => theme.colors.primary};
   display: flex;
+  max-width: 100%;
   
   transition-property: bottom, left;
   transition-duration: .4s;
   transition-timing-function: ease-in-out;
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 `;
 
 const DotsWrapper = styled.div`
@@ -54,8 +60,9 @@ const Container = styled.div`
 
 const Thumbnail = ({ image }) => (
   <Container>
-    <ImageWrapper><img src={image}
-                       alt="thumbnail"/></ImageWrapper>
+    <ImageWrapper>
+      <img src={image} alt="thumbnail"/>
+    </ImageWrapper>
     <DotsWrapper><Dots/></DotsWrapper>
     <ForwardWrapper><Forward/></ForwardWrapper>
   </Container>
