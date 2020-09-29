@@ -3,11 +3,18 @@ import Header from './header';
 import ScrollPrompt from './scroll-prompt/scroll-prompt';
 
 import styled from 'styled-components';
-import { ContentMarginX, ContentMarginY } from '../styles/utils';
+import { ContentMarginX } from '../styles/utils';
 
 const Content = styled.section`
   ${ContentMarginX};
-  ${ContentMarginY};
+  
+  // margin Y
+  margin-top: 10rem;
+  margin-bottom: 6rem;
+  @media (max-width: 960px) {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
   
   h1 {
     margin-bottom: 1.5rem;
@@ -31,7 +38,7 @@ const Container = styled.div`
   overflow: visible;
   border: white 1rem solid;
   min-height: 95vh;
-  
+    
   position: relative;
   
   .prompt {
@@ -40,8 +47,8 @@ const Container = styled.div`
     right: 10%;
   }
   
-  @media (max-width: 768px) {
-    min-height: fit-content;
+  @media (max-width: 960px) {
+    min-height: 50rem;
   }
 `;
 
