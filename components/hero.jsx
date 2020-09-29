@@ -8,14 +8,6 @@ import { ContentMarginX } from '../styles/utils';
 const Content = styled.section`
   ${ContentMarginX};
   
-  // margin Y
-  margin-top: 10rem;
-  margin-bottom: 6rem;
-  @media (max-width: 960px) {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-  }
-  
   h1 {
     margin-bottom: 1.5rem;
     width: 70%;
@@ -25,7 +17,7 @@ const Content = styled.section`
   }
   
   p {
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
     width: 50%;
     @media (max-width: 768px) {
       width: 70%;
@@ -37,9 +29,12 @@ const Container = styled.div`
   background: ${({ theme }) => theme.colors.primary};
   overflow: visible;
   border: white 1rem solid;
-  min-height: 95vh;
+  min-height: 97vh;
     
   position: relative;
+  
+  display: grid;
+  grid-template-rows: .2fr .6fr .2fr;
   
   .prompt {
     position: absolute;
