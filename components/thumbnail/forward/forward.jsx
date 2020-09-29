@@ -1,7 +1,7 @@
 import React from "react"
 import ForwardArrow from "./forward-arrow.svg"
 import styled from "styled-components"
-import { Color } from "../../styles"
+import { Color } from "../../../styles/styles"
 
 const Container = styled.div`
   display: flex;

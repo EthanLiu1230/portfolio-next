@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Color, ContentMarginX, ContentMarginY } from "./styles"
+import { Color, ContentMarginX, ContentMarginY } from "../styles/styles"
 
 const Container = styled.footer`
   background: ${Color.background};

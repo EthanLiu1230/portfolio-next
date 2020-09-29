@@ -4,7 +4,7 @@ import Header from "./header"
 import ScrollPrompt from "./scroll-prompt/scroll-prompt"
 
 import styled from "styled-components"
-import { Color, ContentMarginX, ContentMarginY } from "./styles"
+import { Color, ContentMarginX, ContentMarginY } from "../styles/styles"
 
 const Text = styled.div`
   h1 {

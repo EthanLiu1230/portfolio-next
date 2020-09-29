@@ -1,7 +1,6 @@
 import styled from "styled-components"
-import { Link } from "gatsby"
 
-const HoverLink = styled(Link)`
+const HoverLink = styled.a`
     color: black;
     
     width: fit-content;

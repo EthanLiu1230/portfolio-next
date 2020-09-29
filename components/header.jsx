@@ -1,7 +1,8 @@
-import React from "react"
-import HoverLink from "./hover-link"
-import styled from "styled-components"
-import { ContentMarginX } from "./styles"
+import React from 'react';
+import HoverLink from './hover-link';
+import styled from 'styled-components';
+import { ContentMarginX } from '../styles/utils';
+import Link from 'next/link';
 
 const Container = styled.header`
   margin-top: 2rem;
@@ -9,14 +10,14 @@ const Container = styled.header`
   ${ContentMarginX};
   display: flex;
   justify-content: space-between;
-`
+`;
 
 const Logo = styled.div`
   font-family: Mulish, sans-serif;
   font-weight: 900;
   font-size: 22px;
   line-height: 25px;
-`
+`;
 
 const LinkGroup = styled.nav`
   margin: 0;
@@ -32,16 +33,16 @@ const LinkGroup = styled.nav`
       justify-self: start;
     }
   }
-`
+`;
 
 const Header = () => (
   <Container>
     <Logo>Ethan.Liu</Logo>
     <LinkGroup>
-      <HoverLink to="/page-2/">my work</HoverLink>
-      <HoverLink to="/page-2/">get in touch</HoverLink>
+      <Link href={`/`}><HoverLink>my work</HoverLink></Link>
+      <Link href={`/`}><HoverLink>get in touch</HoverLink></Link>
     </LinkGroup>
   </Container>
-)
+);
 
-export default Header
+export default Header;
