@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
+const Container = styled.a`
   width: 209px;
   height: 67px;
   position: relative;
@@ -48,12 +48,14 @@ const StrokeBox = styled.div`
   left: 8px;
 `;
 
-const HoverButton = ({ children }) => (
-  <Container>
-    <Button>{children}</Button>
-    <StrokeBox/>
-  </Container>
-);
+const HoverButton = React.forwardRef(({ onClick, href, children }, ref) => {
+  return (
+    <Container>
+      <Button href={href} onClick={onClick} ref={ref}>{children}</Button>
+      <StrokeBox/>
+    </Container>
+  );
+});
 
 HoverButton.defaultProps = {
   children: 'See my work'
