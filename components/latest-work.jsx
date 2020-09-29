@@ -1,5 +1,5 @@
 import React from "react"
-import HoverButton from "./hover-button"
+import CtaButton from "./CtaButton/CtaButton"
 import Tag from "./tag"
 import styled from "styled-components"
 

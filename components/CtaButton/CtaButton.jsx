@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Container = styled.a`
   width: 209px;
@@ -48,17 +49,21 @@ const StrokeBox = styled.div`
   left: 8px;
 `;
 
-const HoverButton = React.forwardRef(({ onClick, href, children }, ref) => {
+const CtaButton = React.forwardRef(({ onClick, href, label }, ref) => {
   return (
     <Container>
-      <Button href={href} onClick={onClick} ref={ref}>{children}</Button>
+      <Button href={href} onClick={onClick} ref={ref}>{label}</Button>
       <StrokeBox/>
     </Container>
   );
 });
 
-HoverButton.defaultProps = {
-  children: 'See my work'
+CtaButton.propTypes = {
+  label: PropTypes.string.isRequired
 };
 
-export default HoverButton;
+CtaButton.defaultProps = {
+  label: 'See my work'
+};
+
+export default CtaButton;

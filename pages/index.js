@@ -1,7 +1,7 @@
 import Hero from '../components/hero';
 import React from 'react';
 import styled from 'styled-components';
-import HoverButton from '../components/hover-button';
+import CtaButton from '../components/CtaButton/CtaButton';
 import Link from 'next/link';
 import { ContentMarginX, ContentMarginY } from '../styles/utils';
 import Tag from '../components/tag';
@@ -56,7 +56,7 @@ export default function Home() {
           If we are a good fit, I will give you a time and cost estimate.
         </p>
         <Link href={`/first-page`} passHref>
-          <HoverButton>See my work</HoverButton>
+          <CtaButton>See my work</CtaButton>
         </Link>
       </Hero>
       <GridLayout>
@@ -71,7 +71,7 @@ export default function Home() {
           <p>This is a homepage design and build for a concept project – a chat
             application. I have designed the page first then later built a
             responsive page in Webflow.</p>
-          <HoverButton/>
+          <CtaButton/>
         </LatestWork>
         <Thumbnail/>
       </GridLayout>
