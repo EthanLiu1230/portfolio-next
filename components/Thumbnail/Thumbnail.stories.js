@@ -1,5 +1,6 @@
 import React from 'react';
 import Thumbnail from './Thumbnail';
+import image from './assets/preview.png';
 
 export default {
   title: 'Thumbnail',
@@ -13,4 +14,6 @@ export default {
 
 const Template = (args) => <Thumbnail {...args}/>;
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  image: image
+};
