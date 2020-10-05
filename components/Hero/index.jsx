@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from './Header';
-import ScrollPrompt from './ScrollPrompt';
+import Header from '../Header';
+import ScrollPrompt from '../ScrollPrompt';
 
 import styled from 'styled-components';
-import { ContentMarginX } from '../styles/utils';
+import { ContentMarginX } from '../../styles/utils';
 
 const Content = styled.section`
   ${ContentMarginX};

@@ -1,11 +1,12 @@
-import Hero from '../components/hero';
+import Hero from '../components/Hero';
 import React from 'react';
 import styled from 'styled-components';
 import CtaButton from '../components/CtaButton';
 import { ContentMarginX, ContentMarginY } from '../styles/utils';
-import Tag from '../components/tag';
+import Tag from '../components/Tag';
 import Thumbnail from '../components/Thumbnail';
 import { useRouter } from 'next/router';
+import Footer from '../components/Footer';
 
 const GridLayout = styled.div`
   ${ContentMarginX};
@@ -104,6 +105,8 @@ export default function Home() {
         </div>
 
       </GridLayout>
+
+      <Footer/>
 
     </>
   );
