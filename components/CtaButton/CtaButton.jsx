@@ -49,10 +49,10 @@ const StrokeBox = styled.div`
   left: 8px;
 `;
 
-const CtaButton = () => {
+const CtaButton = ({ label, ...restProps }) => {
   return (
     <Container>
-      <Button>{label}</Button>
+      <Button {...restProps}>{label}</Button>
       <StrokeBox/>
     </Container>
   );

@@ -2,10 +2,10 @@ import Hero from '../components/hero';
 import React from 'react';
 import styled from 'styled-components';
 import CtaButton from '../components/CtaButton/CtaButton';
-import Link from 'next/link';
 import { ContentMarginX, ContentMarginY } from '../styles/utils';
 import Tag from '../components/tag';
 import Thumbnail from '../components/Thumbnail/Thumbnail';
+import { useRouter } from 'next/router';
 
 const GridLayout = styled.div`
   ${ContentMarginX};
@@ -44,6 +44,7 @@ const TagGroup = styled.div`
 const LatestWork = styled.div``;
 
 export default function Home() {
+  const router = useRouter();
   return (
     <>
       <Hero>
@@ -55,9 +56,7 @@ export default function Home() {
           globe. If you need a modern and powerful website, send me an email.
           If we are a good fit, I will give you a time and cost estimate.
         </p>
-        <Link href={`/first-page`} passHref>
-          <CtaButton>See my work</CtaButton>
-        </Link>
+        <CtaButton onClick={() => router.push('/first-page')}/>
       </Hero>
       <GridLayout>
         <LatestWork>
@@ -71,7 +70,7 @@ export default function Home() {
           <p>This is a homepage design and build for a concept project – a chat
             application. I have designed the page first then later built a
             responsive page in Webflow.</p>
-          <CtaButton/>
+          <CtaButton label='la'/>
         </LatestWork>
         <Thumbnail/>
       </GridLayout>

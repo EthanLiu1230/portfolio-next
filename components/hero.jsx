@@ -51,9 +51,7 @@ const Hero = ({ children }) => {
   return (
     <Container>
       <Header/>
-      <Content>
-        {children}
-      </Content>
+      <Content>{children}</Content>
       <div className='prompt'><ScrollPrompt/></div>
     </Container>
   );
