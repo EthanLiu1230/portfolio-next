@@ -7,12 +7,12 @@ const Container = styled.div`
   background: ${({ theme }) => theme.colors.primary};
   overflow: visible;
   border: white 1rem solid;
-  min-height: 90vh;
   text-align: center;
 `;
 const Content = styled.div`  
   ${ContentMarginX};
   ${ContentMarginY};
+  margin-bottom: 12rem;
 `;
 const ProjectHero = ({ children }) => {
   return (

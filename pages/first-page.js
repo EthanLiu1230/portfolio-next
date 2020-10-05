@@ -14,7 +14,7 @@ const FirstPage = () => {
         <p>This is a homepage
           design and build for a concept project – a chat application. I have
           designed the page first then later built a responsive page in
-          Webflow.</p>
+          React or Vue.</p>
         <Link href={'/'}><StyledLink>visit live site</StyledLink></Link>
       </ProjectHero>
       <ProjectDetail/>
