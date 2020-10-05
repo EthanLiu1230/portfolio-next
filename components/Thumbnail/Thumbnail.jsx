@@ -28,16 +28,26 @@ const DotsWrapper = styled.div`
   grid-row: 2/3;
   
   position: absolute;
-  bottom: 0;
+  bottom: .2rem;
 `;
 
-const Image = styled.img`
+const ImageWrapper = styled.div`
   grid-column: 2/3;
   grid-row: 1/2;
+  
+  display: flex;
+  justify-content: center;
+  background: ${({ theme }) => theme.colors.primary};
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
 `;
 
 const Grid = styled.div`
-  display: inline-grid;
+  display: grid;
   grid-template-columns: 25px auto;
   grid-template-rows: auto 25px;
   
@@ -48,7 +58,7 @@ const Thumbnail = ({ image, to }) => {
   return (
     <Grid>
       <DotsWrapper><Dots/></DotsWrapper>
-      <Image src={image}/>
+      <ImageWrapper><img src={image}/></ImageWrapper>
       <Prompt>
         <span>see this project</span>
         <ForwardArrow/>
