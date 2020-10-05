@@ -35,8 +35,8 @@ const DotsWrapper = styled.div`
   grid-row: 2/3;
   
   position: absolute;
-  bottom: 3px;
-  left: 3px;
+  bottom: -2px;
+  left: 2px;
 `;
 
 const ImageWrapper = styled.div`
@@ -60,6 +60,8 @@ const ImageWrapper = styled.div`
 `;
 
 const Grid = styled.div`
+  width: 100%;
+  
   display: grid;
   grid-template-columns: 25px auto;
   grid-template-rows: auto 25px;
