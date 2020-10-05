@@ -23,6 +23,8 @@ const Content = styled.section`
       width: 70%;
     }
   }
+  
+  margin-bottom: 7rem;
 `;
 
 const Container = styled.div`
