@@ -70,9 +70,24 @@ export default function Home() {
           <p>This is a homepage design and build for a concept project – a chat
             application. I have designed the page first then later built a
             responsive page in Webflow.</p>
-          <CtaButton label='la'/>
+          <CtaButton onClick={() => router.push('/first-page')}/>
         </LatestWork>
+
         <Thumbnail/>
+
+        <LatestWork>
+          <h3>latest work</h3>
+          <h1>Chat App website</h1>
+          <TagGroup>
+            <Tag>Website Design</Tag>
+            <Tag>Web Development</Tag>
+            <Tag>Concept</Tag>
+          </TagGroup>
+          <p>This is a homepage design and build for a concept project – a chat
+            application. I have designed the page first then later built a
+            responsive page in Webflow.</p>
+          <CtaButton onClick={() => router.push('/first-page')}/>
+        </LatestWork>
       </GridLayout>
     </>
   );

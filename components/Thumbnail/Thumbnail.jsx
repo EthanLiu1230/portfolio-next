@@ -82,7 +82,7 @@ const Thumbnail = ({ image }) => {
   return (
     <Grid>
       <DotsWrapper><Dots/></DotsWrapper>
-      <ImageWrapper><img src={image}/></ImageWrapper>
+      <ImageWrapper><img src={image} alt='Thumbnail > img'/></ImageWrapper>
       <Prompt>
         <span>see this project</span>
         <ForwardArrow/>
@@ -93,6 +93,8 @@ const Thumbnail = ({ image }) => {
 
 Thumbnail.propTypes = {};
 
-Thumbnail.defaultProps = {};
+Thumbnail.defaultProps = {
+  image: '/images/project-preview.png'
+};
 
 export default Thumbnail;

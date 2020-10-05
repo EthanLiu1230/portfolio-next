@@ -14,6 +14,4 @@ export default {
 
 const Template = (args) => <Thumbnail {...args}/>;
 export const Default = Template.bind({});
-Default.args = {
-  image: image
-};
+Default.args = {};
