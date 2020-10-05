@@ -7,11 +7,11 @@ const Prompt = styled.div`
   display: flex;
 
   span {  
-    font-family: Mulish, sans-serif;
-    font-size: 16px; /* 15px - 20px for main body text */
-    line-height: 1.3; /* 1.2 - 1.45 */
+    //font-family: Mulish, sans-serif;
+    //font-size: 16px; /* 15px - 20px for main body text */
+    //line-height: 1.3; /* 1.2 - 1.45 */
     color: ${({ theme }) => theme.colors.text2};
-    margin-right: 1rem;
+    margin-right: .5rem;
   }
   
   svg {
@@ -21,6 +21,13 @@ const Prompt = styled.div`
   position: absolute;
   right: 0;
   bottom: 0;
+  
+  opacity: 0;
+  
+  transition-property: all;
+  transition-duration: .4s;
+  transition-delay: .1s;
+  transition-timing-function: ease-in-out;
 `;
 
 const DotsWrapper = styled.div`
@@ -28,7 +35,8 @@ const DotsWrapper = styled.div`
   grid-row: 2/3;
   
   position: absolute;
-  bottom: .2rem;
+  bottom: 3px;
+  left: 3px;
 `;
 
 const ImageWrapper = styled.div`
@@ -44,6 +52,9 @@ const ImageWrapper = styled.div`
     height: auto;
   }
   
+  transition-property: all;
+  transition-duration: .4s;
+  transition-timing-function: ease-in-out;
 `;
 
 const Grid = styled.div`
@@ -52,6 +63,19 @@ const Grid = styled.div`
   grid-template-rows: auto 25px;
   
   position: relative;
+  
+  cursor: pointer;
+  
+  :hover {
+    ${ImageWrapper} {
+      transform: translate3d(8px, -8px, 0);
+    }
+    
+    ${Prompt} {
+      transform: translateX(8px);
+      opacity: 1;
+    }
+  }
 `;
 
 const Thumbnail = ({ image, to }) => {
