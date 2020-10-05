@@ -78,7 +78,7 @@ const Grid = styled.div`
   }
 `;
 
-const Thumbnail = ({ image, to }) => {
+const Thumbnail = ({ image }) => {
   return (
     <Grid>
       <DotsWrapper><Dots/></DotsWrapper>
