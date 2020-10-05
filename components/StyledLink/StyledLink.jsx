@@ -16,7 +16,8 @@ const StyledLink = styled.a`
     box-shadow: inset 0 -.5em 0 0 ${({ theme }) => theme.colors.highlight};
     
     transition-property: box-shadow;
-    transition-duration: .2s;
+    transition-duration: .4s;
+    transition-timing-function: ease-out;
     
     :hover {
       box-shadow: inset 0 -22px 0 0 ${({ theme }) => theme.colors.highlight};
