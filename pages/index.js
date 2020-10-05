@@ -10,7 +10,7 @@ import { useRouter } from 'next/router';
 const GridLayout = styled.div`
   ${ContentMarginX};
   display: grid;
-  grid-template-columns: 1.2fr .8fr;
+  grid-template-columns: 1fr 1fr;
   >* {
     ${ContentMarginY};
   }
@@ -22,14 +22,13 @@ const GridLayout = styled.div`
   >:nth-child(even) {
     justify-self: end;
     align-items: start;
-    margin-left: .5rem;
   }
   @media (max-width: 960px) {
     grid-template-columns: 1fr;
-      >:nth-child(even) {
+    >:nth-child(even) {
         justify-self: start;
-        align-items: start;
-      }
+        align-self: start;
+    }
   }
 `;
 

@@ -43,6 +43,8 @@ const ImageWrapper = styled.div`
   grid-column: 2/3;
   grid-row: 1/2;
   
+  align-self: end;
+  
   display: flex;
   justify-content: center;
   background: ${({ theme }) => theme.colors.primary};
