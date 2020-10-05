@@ -3,6 +3,7 @@ import React from 'react';
 import ProjectHero from '../components/ProjectHero';
 import Link from 'next/link';
 import Footer from '../components/Footer';
+import ProjectDetail from '../components/ProjectDetail';
 
 const FirstPage = () => {
   return (
@@ -16,6 +17,7 @@ const FirstPage = () => {
           Webflow.</p>
         <Link href={'/'}><StyledLink>visit live site</StyledLink></Link>
       </ProjectHero>
+      <ProjectDetail/>
       <Footer/>
     </>
   );
