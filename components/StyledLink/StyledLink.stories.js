@@ -1,4 +1,4 @@
-import StyledLink from './StyledLink';
+import StyledLink from './index';
 import React from 'react';
 
 export default {

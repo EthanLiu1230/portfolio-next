@@ -1,10 +1,10 @@
 import Hero from '../components/hero';
 import React from 'react';
 import styled from 'styled-components';
-import CtaButton from '../components/CtaButton/CtaButton';
+import CtaButton from '../components/CtaButton';
 import { ContentMarginX, ContentMarginY } from '../styles/utils';
 import Tag from '../components/tag';
-import Thumbnail from '../components/Thumbnail/Thumbnail';
+import Thumbnail from '../components/Thumbnail';
 import { useRouter } from 'next/router';
 
 const GridLayout = styled.div`

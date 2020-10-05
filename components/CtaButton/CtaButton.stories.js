@@ -1,4 +1,4 @@
-import CtaButton from './CtaButton';
+import CtaButton from './index';
 import React from 'react';
 
 export default {

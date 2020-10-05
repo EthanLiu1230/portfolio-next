@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './header/header';
-import ScrollPrompt from './ScrollPrompt/ScrollPrompt';
+import Header from './Header';
+import ScrollPrompt from './ScrollPrompt';
 
 import styled from 'styled-components';
 import { ContentMarginX } from '../styles/utils';

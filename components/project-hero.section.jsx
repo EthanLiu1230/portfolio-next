@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import HoverLink from "../hover-link/hover-link.styles"
-import Header from "./header/header"
+import Header from "./Header"
 
 const Container = styled.div`
   background: #F9EFE7;

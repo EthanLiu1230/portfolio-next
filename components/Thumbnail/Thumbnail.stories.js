@@ -1,5 +1,5 @@
 import React from 'react';
-import Thumbnail from './Thumbnail';
+import Thumbnail from './index';
 import image from './assets/preview.png';
 
 export default {

@@ -1,5 +1,5 @@
 import React from 'react';
-import StyledLink from '../StyledLink/StyledLink';
+import StyledLink from '../StyledLink';
 import styled from 'styled-components';
 import { ContentMarginX } from '../../styles/utils';
 import Link from 'next/link';

@@ -1,4 +1,4 @@
-import ScrollPrompt from './ScrollPrompt';
+import ScrollPrompt from './index';
 import React from 'react';
 
 export default {

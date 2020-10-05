@@ -1,5 +1,5 @@
 import React from "react"
-import CtaButton from "./CtaButton/CtaButton"
+import CtaButton from "./CtaButton"
 import Tag from "./tag"
 import styled from "styled-components"
 
