@@ -49,14 +49,14 @@ const StrokeBox = styled.div`
   left: 8px;
 `;
 
-const CtaButton = React.forwardRef(({ onClick, href, label }, ref) => {
+const CtaButton = () => {
   return (
     <Container>
-      <Button href={href} onClick={onClick} ref={ref}>{label}</Button>
+      <Button>{label}</Button>
       <StrokeBox/>
     </Container>
   );
-});
+};
 
 CtaButton.propTypes = {
   label: PropTypes.string.isRequired
