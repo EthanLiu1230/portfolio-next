@@ -36,7 +36,7 @@ const GridLayout = styled.div`
 const TagGroup = styled.div`
   display: inline-flex;
   flex-wrap: wrap;
-  > * {
+  >* {
     margin-right: 1rem;
   }
 `;
@@ -103,11 +103,8 @@ export default function Home() {
             Content Editor for you and your team to edit website content quickly
             and easily.</p>
         </div>
-
       </GridLayout>
-
       <Footer/>
-
     </>
   );
 }

@@ -1,9 +1,8 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
+const Tag = styled.span`
   padding: 6px 10px;
-  margin: 0;
+  margin-right: 1rem;
   width: fit-content;
   
   background-color: ${({ theme }) => theme.colors.primary};
@@ -15,11 +14,5 @@ const Container = styled.div`
   line-height: 16px;
   text-transform: capitalize;
 `;
-
-const Tag = ({ children }) => (
-  <Container>
-    <div>{children}</div>
-  </Container>
-);
 
 export default Tag;
