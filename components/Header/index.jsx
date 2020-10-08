@@ -1,7 +1,6 @@
 import React from 'react';
-import StyledLink from '../StyledLink';
 import styled from 'styled-components';
-import { ContentMarginX } from '../../styles/utils';
+import {ContentMarginX} from '../../styles/utils';
 import Link from 'next/link';
 
 const Container = styled.header`
@@ -35,13 +34,13 @@ const LinkGroup = styled.nav`
 `;
 
 const Header = () => (
-  <Container>
-    <Logo>Ethan.Liu</Logo>
-    <LinkGroup>
-      <Link href={`/my-work`}><StyledLink>my work</StyledLink></Link>
-      <Link href={`/`}><StyledLink>get in touch</StyledLink></Link>
-    </LinkGroup>
-  </Container>
+    <Container>
+      <Logo>Ethan.Liu</Logo>
+      <LinkGroup>
+        <Link href={`/my-work`}><a>my work</a></Link>
+        <Link href={`/`}><a>get in touch</a></Link>
+      </LinkGroup>
+    </Container>
 );
 
 export default Header;

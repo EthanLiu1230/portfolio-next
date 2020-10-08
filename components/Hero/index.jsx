@@ -3,7 +3,7 @@ import Header from '../Header';
 import ScrollPrompt from '../ScrollPrompt';
 
 import styled from 'styled-components';
-import { ContentMarginX } from '../../styles/utils';
+import {ContentMarginX} from '../../styles/utils';
 
 const Content = styled.section`
   ${ContentMarginX};
@@ -28,7 +28,7 @@ const Content = styled.section`
 `;
 
 const Container = styled.div`
-  background: ${({ theme }) => theme.colors.primary};
+  background: ${({theme}) => theme.colors.primary};
   overflow: visible;
   border: white 1rem solid;
   min-height: 97vh;
@@ -49,14 +49,14 @@ const Container = styled.div`
   }
 `;
 
-const Hero = ({ children }) => {
-  return (
-    <Container>
-      <Header/>
-      <Content>{children}</Content>
-      <div className='prompt'><ScrollPrompt/></div>
-    </Container>
-  );
+const Hero = ({children}) => {
+    return (
+        <Container>
+            <Header/>
+            <Content>{children}</Content>
+            <div className='prompt'><ScrollPrompt/></div>
+        </Container>
+    );
 };
 
 export default Hero;
