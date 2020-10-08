@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { ContentMarginX, ContentMarginY } from '../../styles/utils';
+import React from 'react'
+import styled from 'styled-components'
+import { ContentMarginX, ContentMarginY } from '../../styles/utils'
 
 const Container = styled.footer`
   background: ${({ theme }) => theme.colors.primary};
@@ -9,22 +9,19 @@ const Container = styled.footer`
   min-height: 370px;
   
   position: relative;
-`;
+`
 
 const Content = styled.div`
   ${ContentMarginY};
   ${ContentMarginX};
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
-  h1 {
-    margin-right: 1rem;
-  }
-  
+  grid-column-gap: 4rem;
+
   @media (max-width: 960px) {
     grid-template-columns: 1fr;
   }
-`;
+`
 
 const Reserved = styled.div`
   display: block;
@@ -37,7 +34,7 @@ const Reserved = styled.div`
   
   position: absolute;
   bottom: 0;
-`;
+`
 
 const Footer = () => {
   return (
@@ -57,7 +54,7 @@ const Footer = () => {
         © All right reserved – Ethan.Liu
       </Reserved>
     </Container>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
