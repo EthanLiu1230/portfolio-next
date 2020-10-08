@@ -10,10 +10,10 @@ export const ContentMarginX = css`
 `
 
 export const ContentMarginY = css`
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
   @media (max-width: 960px) {
-    margin-top: 4rem;
+    margin-top: 0;
     margin-bottom: 4rem;
   }
 `
