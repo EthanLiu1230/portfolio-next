@@ -40,7 +40,10 @@ const ImageWrapper = styled.div`
     
   display: flex;
   justify-content: center;
+  align-self: end;
   background: ${({ theme }) => theme.colors.primary};
+  
+  width: 100%;
   
   img {
     max-width: 100%;
@@ -59,7 +62,7 @@ const Container = styled.div`
   
   cursor: pointer;
   
-  //display: flex;
+  display: flex;
   
   :hover {
     ${ImageWrapper} {
