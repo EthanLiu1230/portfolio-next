@@ -12,7 +12,7 @@ const GridLayout = styled.div`
   ${ContentMarginX};
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 3rem;
+  grid-column-gap: 4rem;
   >* {
     ${ContentMarginY};
   }

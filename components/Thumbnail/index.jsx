@@ -71,13 +71,6 @@ const Container = styled.div`
       opacity: 1;
     }
   }
-  
-  @media (min-width: 960px) {
-    display: flex;
-    ${ImageWrapper} {
-      align-self: end;
-    }
-  }
 `
 
 const Thumbnail = ({ image }) => {
