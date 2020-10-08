@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const ContentMarginX = css`
   margin-left: 10%;
@@ -18,7 +18,16 @@ export const ContentMarginY = css`
   }
 `
 
-
+export const Panarama = styled.div`
+  font-family: Mulish, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.1;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.text2};
+  margin-bottom: 1rem;
+`
 
 export const defaultTheme = {
   colors: {

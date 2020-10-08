@@ -34,16 +34,6 @@ const GlobalStyle = createGlobalStyle`
   b {
     box-shadow: inset 0 -.5em 0 0 ${({ theme }) => theme.colors.highlight};
   }
-  h3 {
-    font-family: Mulish, sans-serif;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 1.1;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    color: ${({ theme }) => theme.colors.text2};
-    margin-bottom: 1rem;
-  }
   
   p {
     font-family: Mulish, sans-serif;

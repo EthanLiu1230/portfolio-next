@@ -2,7 +2,7 @@ import Hero from '../components/Hero'
 import React from 'react'
 import styled from 'styled-components'
 import CtaButton from '../components/CtaButton'
-import { ContentMarginX, ContentMarginY } from '../styles/utils'
+import { ContentMarginX, ContentMarginY, Panarama } from '../styles/utils'
 import Tag from '../components/Tag'
 import Thumbnail from '../components/Thumbnail'
 import { useRouter } from 'next/router'
@@ -62,7 +62,7 @@ export default function Home () {
       <GridLayout>
 
         <LatestWork>
-          <h3>latest work</h3>
+          <Panarama>latest work</Panarama>
           <h1>Chat App website</h1>
           <TagGroup>
             <Tag>Website Design</Tag>
@@ -77,7 +77,7 @@ export default function Home () {
         <Thumbnail/>
 
         <LatestWork>
-          <h3>latest work</h3>
+          <Panarama>latest work</Panarama>
           <h1>Chat App website</h1>
           <TagGroup>
             <Tag>Website Design</Tag>
