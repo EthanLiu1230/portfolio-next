@@ -1,7 +1,7 @@
-import React from 'react';
-import ForwardArrow from './assets/ForwardArrow.svg';
-import Dots from './assets/Dots.svg';
-import styled from 'styled-components';
+import React from 'react'
+import ForwardArrow from './assets/ForwardArrow.svg'
+import Dots from './assets/Dots.svg'
+import styled from 'styled-components'
 
 const Prompt = styled.div`
   display: flex;
@@ -20,7 +20,7 @@ const Prompt = styled.div`
   
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -25px;
   
   opacity: 0;
   
@@ -28,20 +28,15 @@ const Prompt = styled.div`
   transition-duration: .4s;
   transition-delay: .1s;
   transition-timing-function: ease-in-out;
-`;
+`
 
 const DotsWrapper = styled.div`
-  grid-column: 1/2;
-  grid-row: 2/3;
-  
   position: absolute;
-  bottom: -2px;
-  left: 2px;
-`;
+  bottom: -27px;
+  left: -23px;
+`
 
 const ImageWrapper = styled.div`
-  grid-column: 2/3;
-  grid-row: 1/2;
   
   align-self: end;
   
@@ -57,14 +52,10 @@ const ImageWrapper = styled.div`
   transition-property: all;
   transition-duration: .4s;
   transition-timing-function: ease-in-out;
-`;
+`
 
-const Grid = styled.div`
+const Container = styled.div`
   width: 100%;
-  
-  display: grid;
-  grid-template-columns: 25px auto;
-  grid-template-rows: auto 25px;
   
   position: relative;
   
@@ -80,25 +71,25 @@ const Grid = styled.div`
       opacity: 1;
     }
   }
-`;
+`
 
 const Thumbnail = ({ image }) => {
   return (
-    <Grid>
+    <Container>
       <DotsWrapper><Dots/></DotsWrapper>
       <ImageWrapper><img src={image} alt='Thumbnail > img'/></ImageWrapper>
       <Prompt>
         <span>see this project</span>
         <ForwardArrow/>
       </Prompt>
-    </Grid>
-  );
-};
+    </Container>
+  )
+}
 
-Thumbnail.propTypes = {};
+Thumbnail.propTypes = {}
 
 Thumbnail.defaultProps = {
-  image: '/images/project-preview.png'
-};
+  image: '/images/project-preview.png',
+}
 
-export default Thumbnail;
+export default Thumbnail
