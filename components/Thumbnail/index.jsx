@@ -37,9 +37,7 @@ const DotsWrapper = styled.div`
 `
 
 const ImageWrapper = styled.div`
-  
-  align-self: end;
-  
+    
   display: flex;
   justify-content: center;
   background: ${({ theme }) => theme.colors.primary};
@@ -61,6 +59,8 @@ const Container = styled.div`
   
   cursor: pointer;
   
+  //display: flex;
+  
   :hover {
     ${ImageWrapper} {
       transform: translate3d(8px, -8px, 0);
@@ -69,6 +69,13 @@ const Container = styled.div`
     ${Prompt} {
       transform: translateX(8px);
       opacity: 1;
+    }
+  }
+  
+  @media (min-width: 960px) {
+    display: flex;
+    ${ImageWrapper} {
+      align-self: end;
     }
   }
 `

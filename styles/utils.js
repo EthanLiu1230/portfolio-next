@@ -1,8 +1,8 @@
 import { css } from 'styled-components'
 
 export const ContentMarginX = css`
-  margin-left: 9rem;
-  margin-right: 9rem;
+  margin-left: 10%;
+  margin-right: 10%;
   @media (max-width: 960px) {
     margin-left: 2rem;
     margin-right: 2rem;

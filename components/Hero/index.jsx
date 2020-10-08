@@ -31,7 +31,7 @@ const Container = styled.div`
   background: ${({ theme }) => theme.colors.primary};
   overflow: visible;
   border: white 1rem solid;
-  min-height: 95vh;
+  min-height: 90vh;
     
   position: relative;
   

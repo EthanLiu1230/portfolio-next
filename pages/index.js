@@ -12,17 +12,17 @@ const GridLayout = styled.div`
   ${ContentMarginX};
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-column-gap: 3rem;
   >* {
     ${ContentMarginY};
   }
   >:nth-child(odd) {
     justify-self: start;
     align-self: start;
-    width: 90%;
   }
   >:nth-child(even) {
     justify-self: end;
-    align-items: start;
+    align-items: center;
   }
   @media (max-width: 960px) {
     grid-template-columns: 1fr;
