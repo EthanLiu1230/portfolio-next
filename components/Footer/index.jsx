@@ -12,7 +12,6 @@ const Container = styled.footer`
 `
 
 const Content = styled.div`
-  ${ContentMarginY};
   ${ContentMarginX};
   display: grid;
   grid-template-columns: 1fr 1fr;
