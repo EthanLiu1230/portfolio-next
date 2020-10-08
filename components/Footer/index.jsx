@@ -40,13 +40,13 @@ const Footer = () => {
     <Container>
       <Content>
         <h1>
-          Want to work?
+          Want to <b>work?</b>
         </h1>
         <p>
           If you need a modern and powerful website for your business, startup
           or
           personally, I am available for work. You can email me directly at
-          dev_ethan@outlook.com.
+          <a href={`mailto:dev_ethan@outlook.com`}> dev_ethan@outlook.com.</a>
         </p>
       </Content>
       <Reserved>

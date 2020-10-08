@@ -18,6 +18,8 @@ export const ContentMarginY = css`
   }
 `
 
+
+
 export const defaultTheme = {
   colors: {
     primary: '#F9EFE7',

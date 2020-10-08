@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   
@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: Mulish, sans-serif;
     font-size: 16px; /* 15px - 20px for main body text */
     line-height: 1.3; /* 1.2 - 1.45 */
-    color: ${({theme}) => theme.colors.text1};
+    color: ${({ theme }) => theme.colors.text1};
     @media (max-width: 768px) {
       font-size: 14px;
     }
@@ -23,12 +23,17 @@ const GlobalStyle = createGlobalStyle`
     font-size: 56px;
     line-height: 1.37;
     margin-bottom: 1.5rem;
+
     
     @media (max-width: 768px) {
       font-size: 37px;
     }
   }
   
+      
+  b {
+    box-shadow: inset 0 -.5em 0 0 ${({ theme }) => theme.colors.highlight};
+  }
   h3 {
     font-family: Mulish, sans-serif;
     font-weight: bold;
@@ -36,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.1;
     letter-spacing: .2em;
     text-transform: uppercase;
-    color: ${({theme}) => theme.colors.text2};
+    color: ${({ theme }) => theme.colors.text2};
     margin-bottom: 1rem;
   }
   
@@ -67,17 +72,17 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     text-align: center;
     
-    box-shadow: inset 0 -.5em 0 0 ${({theme}) => theme.colors.highlight};
+    box-shadow: inset 0 -.5em 0 0 ${({ theme }) => theme.colors.highlight};
     
     transition-property: box-shadow;
     transition-duration: .4s;
     transition-timing-function: ease-out;
     
     :hover {
-      box-shadow: inset 0 -22px 0 0 ${({theme}) => theme.colors.highlight};
+      box-shadow: inset 0 -22px 0 0 ${({ theme }) => theme.colors.highlight};
       cursor: pointer;
     }
   }
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle

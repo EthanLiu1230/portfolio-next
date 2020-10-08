@@ -50,7 +50,7 @@ export default function Home () {
     <>
       <Hero>
         <h1>Hi, I’m Ethan,
-          Web Developer and Web Designer
+          <b>Web Developer</b> and <b>Web Designer</b>
         </h1>
         <p>
           I design and build beautiful websites for businesses around the
@@ -91,7 +91,7 @@ export default function Home () {
         </LatestWork>
         <Thumbnail/>
 
-        <h1>What I Do</h1>
+        <h1>What I <b>Do</b></h1>
         <div>
           <h2>Design</h2>
           <p>I design beautiful and powerful websites for modern businesses. Any
