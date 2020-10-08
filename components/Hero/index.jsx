@@ -1,9 +1,9 @@
-import React from 'react';
-import Header from '../Header';
-import ScrollPrompt from '../ScrollPrompt';
+import React from 'react'
+import Header from '../Header'
+import ScrollPrompt from '../ScrollPrompt'
 
-import styled from 'styled-components';
-import {ContentMarginX} from '../../styles/utils';
+import styled from 'styled-components'
+import { ContentMarginX } from '../../styles/utils'
 
 const Content = styled.section`
   ${ContentMarginX};
@@ -20,18 +20,18 @@ const Content = styled.section`
     margin-bottom: 6rem;
     width: 50%;
     @media (max-width: 768px) {
-      width: 70%;
+      width: 100%;
     }
   }
   
   margin-bottom: 7rem;
-`;
+`
 
 const Container = styled.div`
-  background: ${({theme}) => theme.colors.primary};
+  background: ${({ theme }) => theme.colors.primary};
   overflow: visible;
   border: white 1rem solid;
-  min-height: 97vh;
+  min-height: 95vh;
     
   position: relative;
   
@@ -47,16 +47,16 @@ const Container = styled.div`
   @media (max-width: 960px) {
     min-height: 50rem;
   }
-`;
+`
 
-const Hero = ({children}) => {
-    return (
-        <Container>
-            <Header/>
-            <Content>{children}</Content>
-            <div className='prompt'><ScrollPrompt/></div>
-        </Container>
-    );
-};
+const Hero = ({ children }) => {
+  return (
+    <Container>
+      <Header/>
+      <Content>{children}</Content>
+      <div className='prompt'><ScrollPrompt/></div>
+    </Container>
+  )
+}
 
-export default Hero;
+export default Hero

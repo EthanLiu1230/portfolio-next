@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import React from 'react'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const Container = styled.a`
   width: 209px;
   height: 67px;
   position: relative;
-`;
+`
 
 const Button = styled.button`
   width: 201px;
@@ -36,7 +36,7 @@ const Button = styled.button`
     top: 8px;
     left: 8px;
   }
-`;
+`
 
 const StrokeBox = styled.div`
   width: 201px;
@@ -47,7 +47,7 @@ const StrokeBox = styled.div`
   position: absolute;
   top: 8px;
   left: 8px;
-`;
+`
 
 const CtaButton = ({ label, ...restProps }) => {
   return (
@@ -55,15 +55,15 @@ const CtaButton = ({ label, ...restProps }) => {
       <Button {...restProps}>{label}</Button>
       <StrokeBox/>
     </Container>
-  );
-};
+  )
+}
 
 CtaButton.propTypes = {
-  label: PropTypes.string.isRequired
-};
+  label: PropTypes.string.isRequired,
+}
 
 CtaButton.defaultProps = {
-  label: 'See my work'
-};
+  label: 'See my work',
+}
 
-export default CtaButton;
+export default CtaButton

@@ -1,12 +1,12 @@
-import Hero from '../components/Hero';
-import React from 'react';
-import styled from 'styled-components';
-import CtaButton from '../components/CtaButton';
-import { ContentMarginX, ContentMarginY } from '../styles/utils';
-import Tag from '../components/Tag';
-import Thumbnail from '../components/Thumbnail';
-import { useRouter } from 'next/router';
-import Footer from '../components/Footer';
+import Hero from '../components/Hero'
+import React from 'react'
+import styled from 'styled-components'
+import CtaButton from '../components/CtaButton'
+import { ContentMarginX, ContentMarginY } from '../styles/utils'
+import Tag from '../components/Tag'
+import Thumbnail from '../components/Thumbnail'
+import { useRouter } from 'next/router'
+import Footer from '../components/Footer'
 
 const GridLayout = styled.div`
   ${ContentMarginX};
@@ -31,20 +31,21 @@ const GridLayout = styled.div`
         align-self: start;
     }
   }
-`;
+`
 
 const TagGroup = styled.div`
   display: inline-flex;
   flex-wrap: wrap;
   >* {
-    margin-right: 1rem;
+    margin-right: .6rem;
+    margin-bottom: .6rem;
   }
-`;
+`
 
-const LatestWork = styled.div``;
+const LatestWork = styled.div``
 
-export default function Home() {
-  const router = useRouter();
+export default function Home () {
+  const router = useRouter()
   return (
     <>
       <Hero>
@@ -106,5 +107,5 @@ export default function Home() {
       </GridLayout>
       <Footer/>
     </>
-  );
+  )
 }
