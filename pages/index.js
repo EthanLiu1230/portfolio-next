@@ -1,12 +1,13 @@
-import Hero from '../components/Hero'
-import React from 'react'
-import styled from 'styled-components'
-import CtaButton from '../components/CtaButton'
-import { ContentMarginX, ContentMarginY, Panarama } from '../styles/utils'
-import Tag from '../components/Tag'
-import Thumbnail from '../components/Thumbnail'
-import { useRouter } from 'next/router'
-import Footer from '../components/Footer'
+import Hero from '../components/Hero';
+import React from 'react';
+import styled from 'styled-components';
+import CtaButton from '../components/CtaButton';
+import { ContentMarginX, ContentMarginY, Panarama } from '../styles/utils';
+import Tag from '../components/Tag';
+import Thumbnail from '../components/Thumbnail';
+import { useRouter } from 'next/router';
+import Footer from '../components/Footer';
+import { getHero } from '../lib/home';
 
 const TagGroup = styled.div`
   display: inline-flex;
@@ -15,13 +16,13 @@ const TagGroup = styled.div`
     margin-right: .6rem;
     margin-bottom: .6rem;
   }
-`
+`;
 
-const LatestWork_A = styled.div``
+const LatestWork_A = styled.div``;
 
-const LatestWork_B = styled.div``
+const LatestWork_B = styled.div``;
 
-const ThumbnailWrap = styled.div``
+const ThumbnailWrap = styled.div``;
 
 const Project = styled.section`
   ${ContentMarginX};
@@ -54,7 +55,7 @@ const Project = styled.section`
       grid-column: 1/2;
     }
   }
-`
+`;
 
 const WhatIDo = styled.section`
   ${ContentMarginX};
@@ -73,15 +74,15 @@ const WhatIDo = styled.section`
       grid-column: 1/2;
     }
   }
-`
+`;
 
-export default function Home () {
-  const router = useRouter()
+export default function Home ({ hero }) {
+  const router = useRouter();
   return (
     <>
       <Hero>
         <h1>Hi, I’m Ethan,
-          <b>Web Developer</b> and <b>Web Designer</b>
+          <strong>Web Developer</strong> and <strong>Web Designer</strong>
         </h1>
         <p>
           I design and build beautiful websites for businesses around the
@@ -116,7 +117,7 @@ export default function Home () {
       </Project>
 
       <WhatIDo>
-        <h1>What I <b>Do</b></h1>
+        <h1>What I <strong>Do</strong></h1>
         <div>
           <h2>Design</h2>
           <p>I design beautiful and powerful websites for modern businesses. Any
@@ -132,5 +133,18 @@ export default function Home () {
       </WhatIDo>
       <Footer/>
     </>
-  )
+  );
+}
+
+export async function getStaticProps () {
+  const hero = await getHero();
+  // const projects = await getProjects() // array
+  // const skills = await getSkills() // array
+  // const footer = await getFooter()
+  return {
+    props: {
+      // hero, projects, skills, footer,
+      hero,
+    },
+  };
 }

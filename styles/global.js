@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
       
-  b {
+  strong {
     box-shadow: inset 0 -.5em 0 0 ${({ theme }) => theme.colors.highlight};
   }
   

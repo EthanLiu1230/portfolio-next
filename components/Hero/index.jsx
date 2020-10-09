@@ -1,9 +1,9 @@
-import React from 'react'
-import Header from '../Header'
-import ScrollPrompt from '../ScrollPrompt'
+import React from 'react';
+import Header from '../Header';
+import ScrollPrompt from '../ScrollPrompt';
 
-import styled from 'styled-components'
-import { ContentMarginX } from '../../styles/utils'
+import styled from 'styled-components';
+import { ContentMarginX } from '../../styles/utils';
 
 const Content = styled.section`
   ${ContentMarginX};
@@ -23,22 +23,23 @@ const Content = styled.section`
       width: 100%;
     }
   }
-  
-  margin-bottom: 7rem;
-`
+  margin-top: 2rem;
+  margin-bottom: 6rem;
+`;
 
+const PromptWrap = styled.div``;
 const Container = styled.div`
   background: ${({ theme }) => theme.colors.primary};
   overflow: visible;
   border: white 1rem solid;
-  min-height: 90vh;
+  min-height: 100vh;
     
   position: relative;
   
   display: grid;
   grid-template-rows: .2fr .6fr .2fr;
   
-  .prompt {
+  ${PromptWrap} {
     position: absolute;
     bottom: -1rem;
     right: 10%;
@@ -47,16 +48,16 @@ const Container = styled.div`
   @media (max-width: 960px) {
     min-height: 50rem;
   }
-`
+`;
 
 const Hero = ({ children }) => {
   return (
     <Container>
       <Header/>
       <Content>{children}</Content>
-      <div className='prompt'><ScrollPrompt/></div>
+      <PromptWrap><ScrollPrompt/></PromptWrap>
     </Container>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
