@@ -22,25 +22,34 @@ const LatestWork_A = styled.div`
 `
 
 const LatestWork_B = styled.div`
-
+  p {
+    margin-bottom: 3rem;
+  }
 `
 
-const ThumbnailWrapper = styled.div`
+const ThumbnailWrap = styled.div`
 `
 
 const Project = styled.section`
   ${ContentMarginX};
-  ${ContentMarginY};
+  margin-bottom: 8rem;
+  margin-top: 8rem;
+  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: min-content;
+  grid-row-gap: 2rem;
   
   @media (min-width: 960px) {
-    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     grid-column-gap: 4rem;
+    grid-row-gap: 0;
     
-    ${ThumbnailWrapper} {
+    ${ThumbnailWrap} {
       grid-row: 1/3;
       grid-column: 2/3;
+      align-self: center;
     }
     
     ${LatestWork_A} {
@@ -87,7 +96,7 @@ export default function Home () {
           </TagGroup>
         </LatestWork_A>
 
-        <ThumbnailWrapper><Thumbnail/></ThumbnailWrapper>
+        <ThumbnailWrap><Thumbnail/></ThumbnailWrap>
 
         <LatestWork_B>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
