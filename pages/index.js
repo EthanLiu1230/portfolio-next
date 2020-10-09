@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import CtaButton from '../components/CtaButton'
 import { ContentMarginX, ContentMarginY, Panarama } from '../styles/utils'
 import Tag from '../components/Tag'
-import _Thumbnail from '../components/Thumbnail'
+import Thumbnail from '../components/Thumbnail'
 import { useRouter } from 'next/router'
 import Footer from '../components/Footer'
 
@@ -18,30 +18,40 @@ const TagGroup = styled.div`
 `
 
 const LatestWork_A = styled.div`
-  grid-area: A;
+
 `
 
 const LatestWork_B = styled.div`
-  grid-area: B;
+
 `
 
-const Thumbnail = styled(_Thumbnail)`
-  grid-area: Area;
-  display: inline-block;
-  position: relative;
+const ThumbnailWrapper = styled.div`
 `
 
 const Project = styled.section`
   ${ContentMarginX};
   ${ContentMarginY};
   
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  grid-template-areas: 
-    "A Area"
-    "B Area";
-  grid-column-gap: 4rem;
+  @media (min-width: 960px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-column-gap: 4rem;
+    
+    ${ThumbnailWrapper} {
+      grid-row: 1/3;
+      grid-column: 2/3;
+    }
+    
+    ${LatestWork_A} {
+      grid-row: 1/2;
+      grid-column: 1/2;
+    }    
+    ${LatestWork_B} {
+      grid-row: 2/3;
+      grid-column: 1/2;
+    }
+  }
 `
 
 const WhatIDo = styled.section`
@@ -66,6 +76,7 @@ export default function Home () {
       </Hero>
 
       <Project>
+
         <LatestWork_A>
           <Panarama>latest work</Panarama>
           <h1>Chat App website</h1>
@@ -76,14 +87,16 @@ export default function Home () {
           </TagGroup>
         </LatestWork_A>
 
-        <Thumbnail/>
+        <ThumbnailWrapper><Thumbnail/></ThumbnailWrapper>
 
         <LatestWork_B>
-          <p>This is a homepage design and build for a concept project – a chat
-            application. I have designed the page first then later built a
-            responsive page in Webflow.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+            beatae culpa, doloribus esse ex laboriosam reprehenderit vitae? Ad
+            asperiores dolores doloribus eius enim ex officia porro, praesentium
+            quidem quis sit..</p>
           <CtaButton onClick={() => router.push('/first-page')}/>
         </LatestWork_B>
+
       </Project>
 
       <WhatIDo>
