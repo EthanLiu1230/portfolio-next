@@ -2,10 +2,13 @@ import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   
-  body {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+  
+  body {
     max-width: 1500px;
     font-family: Mulish, sans-serif;
     font-size: 16px; /* 15px - 20px for main body text */
@@ -24,7 +27,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: 56px;
     line-height: 1.37;
     margin-bottom: 1.5rem;
-
     
     @media (max-width: 768px) {
       font-size: 37px;

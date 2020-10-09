@@ -4,34 +4,9 @@ import styled from 'styled-components'
 import CtaButton from '../components/CtaButton'
 import { ContentMarginX, ContentMarginY, Panarama } from '../styles/utils'
 import Tag from '../components/Tag'
-import Thumbnail from '../components/Thumbnail'
+import _Thumbnail from '../components/Thumbnail'
 import { useRouter } from 'next/router'
 import Footer from '../components/Footer'
-
-const GridLayout = styled.div`
-  ${ContentMarginX};
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 4rem;
-  >* {
-    ${ContentMarginY};
-  }
-  >:nth-child(odd) {
-    justify-self: start;
-    align-self: start;
-  }
-  >:nth-child(even) {
-    justify-self: end;
-    align-items: center;
-  }
-  @media (max-width: 960px) {
-    grid-template-columns: 1fr;
-    >:nth-child(even) {
-        justify-self: start;
-        align-self: start;
-    }
-  }
-`
 
 const TagGroup = styled.div`
   display: inline-flex;
@@ -42,7 +17,37 @@ const TagGroup = styled.div`
   }
 `
 
-const LatestWork = styled.div``
+const LatestWork_A = styled.div`
+  grid-area: A;
+`
+
+const LatestWork_B = styled.div`
+  grid-area: B;
+`
+
+const Thumbnail = styled(_Thumbnail)`
+  grid-area: Area;
+  display: inline-block;
+  position: relative;
+`
+
+const Project = styled.section`
+  ${ContentMarginX};
+  ${ContentMarginY};
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+    "A Area"
+    "B Area";
+  grid-column-gap: 4rem;
+`
+
+const WhatIDo = styled.section`
+  ${ContentMarginX};
+  ${ContentMarginY};
+`
 
 export default function Home () {
   const router = useRouter()
@@ -59,9 +64,9 @@ export default function Home () {
         </p>
         <CtaButton onClick={() => router.push('/first-page')}/>
       </Hero>
-      <GridLayout>
 
-        <LatestWork>
+      <Project>
+        <LatestWork_A>
           <Panarama>latest work</Panarama>
           <h1>Chat App website</h1>
           <TagGroup>
@@ -69,28 +74,19 @@ export default function Home () {
             <Tag>Web Development</Tag>
             <Tag>Concept</Tag>
           </TagGroup>
+        </LatestWork_A>
+
+        <Thumbnail/>
+
+        <LatestWork_B>
           <p>This is a homepage design and build for a concept project – a chat
             application. I have designed the page first then later built a
             responsive page in Webflow.</p>
           <CtaButton onClick={() => router.push('/first-page')}/>
-        </LatestWork>
-        <Thumbnail/>
+        </LatestWork_B>
+      </Project>
 
-        <LatestWork>
-          <Panarama>latest work</Panarama>
-          <h1>Chat App website</h1>
-          <TagGroup>
-            <Tag>Website Design</Tag>
-            <Tag>Web Development</Tag>
-            <Tag>Concept</Tag>
-          </TagGroup>
-          <p>This is a homepage design and build for a concept project – a chat
-            application. I have designed the page first then later built a
-            responsive page in Webflow.</p>
-          <CtaButton onClick={() => router.push('/first-page')}/>
-        </LatestWork>
-        <Thumbnail/>
-
+      <WhatIDo>
         <h1>What I <b>Do</b></h1>
         <div>
           <h2>Design</h2>
@@ -104,7 +100,7 @@ export default function Home () {
             Content Editor for you and your team to edit website content quickly
             and easily.</p>
         </div>
-      </GridLayout>
+      </WhatIDo>
       <Footer/>
     </>
   )
