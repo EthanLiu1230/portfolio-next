@@ -17,24 +17,16 @@ const TagGroup = styled.div`
   }
 `
 
-const LatestWork_A = styled.div`
+const LatestWork_A = styled.div``
 
-`
+const LatestWork_B = styled.div``
 
-const LatestWork_B = styled.div`
-  p {
-    margin-bottom: 3rem;
-  }
-`
-
-const ThumbnailWrap = styled.div`
-`
+const ThumbnailWrap = styled.div``
 
 const Project = styled.section`
   ${ContentMarginX};
-  margin-bottom: 8rem;
-  margin-top: 8rem;
-  
+  ${ContentMarginY};
+
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: min-content;
@@ -83,6 +75,30 @@ export default function Home () {
         </p>
         <CtaButton onClick={() => router.push('/first-page')}/>
       </Hero>
+
+      <Project>
+
+        <LatestWork_A>
+          <Panarama>latest work</Panarama>
+          <h1>Chat App website</h1>
+          <TagGroup>
+            <Tag>Website Design</Tag>
+            <Tag>Web Development</Tag>
+            <Tag>Concept</Tag>
+          </TagGroup>
+        </LatestWork_A>
+
+        <ThumbnailWrap><Thumbnail/></ThumbnailWrap>
+
+        <LatestWork_B>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+            beatae culpa, doloribus esse ex laboriosam reprehenderit vitae? Ad
+            asperiores dolores doloribus eius enim ex officia porro, praesentium
+            quidem quis sit..</p>
+          <CtaButton onClick={() => router.push('/first-page')}/>
+        </LatestWork_B>
+
+      </Project>
 
       <Project>
 
