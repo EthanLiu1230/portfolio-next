@@ -25,7 +25,8 @@ const ThumbnailWrap = styled.div``
 
 const Project = styled.section`
   ${ContentMarginX};
-  ${ContentMarginY};
+  margin-bottom: 10rem;
+  margin-top: 10rem;
 
   display: grid;
   grid-template-columns: 1fr;
@@ -57,7 +58,21 @@ const Project = styled.section`
 
 const WhatIDo = styled.section`
   ${ContentMarginX};
-  ${ContentMarginY};
+  margin-top: 10rem;
+  margin-bottom: 8rem;
+  h1 {
+    transform: translateX(-6px);
+    margin-bottom: 4rem;
+  }
+  
+  @media (min-width: 960px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    h1 {
+      transform: none;
+      grid-column: 1/2;
+    }
+  }
 `
 
 export default function Home () {
@@ -75,30 +90,6 @@ export default function Home () {
         </p>
         <CtaButton onClick={() => router.push('/first-page')}/>
       </Hero>
-
-      <Project>
-
-        <LatestWork_A>
-          <Panarama>latest work</Panarama>
-          <h1>Chat App website</h1>
-          <TagGroup>
-            <Tag>Website Design</Tag>
-            <Tag>Web Development</Tag>
-            <Tag>Concept</Tag>
-          </TagGroup>
-        </LatestWork_A>
-
-        <ThumbnailWrap><Thumbnail/></ThumbnailWrap>
-
-        <LatestWork_B>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-            beatae culpa, doloribus esse ex laboriosam reprehenderit vitae? Ad
-            asperiores dolores doloribus eius enim ex officia porro, praesentium
-            quidem quis sit..</p>
-          <CtaButton onClick={() => router.push('/first-page')}/>
-        </LatestWork_B>
-
-      </Project>
 
       <Project>
 
