@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px; /* 15px - 20px for main body text */
     line-height: 1.3; /* 1.2 - 1.45 */
     color: ${({ theme }) => theme.colors.text1};
+    
     @media (max-width: 768px) {
       font-size: 14px;
     }

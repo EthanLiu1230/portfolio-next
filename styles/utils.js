@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 export const ContentMarginX = css`
   margin-left: 10%;
   margin-right: 10%;
+  
   @media (max-width: 960px) {
     margin-left: 2rem;
     margin-right: 2rem;
@@ -12,6 +13,7 @@ export const ContentMarginX = css`
 export const ContentMarginY = css`
   margin-top: 8rem;
   margin-bottom: 8rem;
+  
   @media (max-width: 960px) {
     margin-top: 4rem;
     margin-bottom: 4rem;
