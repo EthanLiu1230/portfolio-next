@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-next-styled-components",
+  "name": "portfolio-next",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
@@ -13,8 +13,6 @@
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-is": "^16.13.1",
-    "remark": "^12.0.1",
-    "remark-html": "^13.0.1",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
