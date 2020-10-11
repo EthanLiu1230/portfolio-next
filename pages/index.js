@@ -2,6 +2,7 @@ import Hero from '../components/Hero';
 import React from 'react';
 import styled from 'styled-components';
 import CtaButton from '../components/CtaButton';
+import { getHomepage, getHomePage } from '../data';
 import { ContentMarginX, Panarama } from '../styles/utils';
 import Tag from '../components/Tag';
 import Thumbnail from '../components/Thumbnail';
@@ -84,7 +85,7 @@ export default function Home ({ hero }) {
   return (
     <>
       <Hero>
-        <ReactMarkdown source={input}/>
+        <ReactMarkdown source={hero}/>
         <CtaButton onClick={() => router.push('/first-page')}/>
       </Hero>
 
@@ -132,15 +133,14 @@ export default function Home ({ hero }) {
   );
 }
 
-// export async function getStaticProps () {
-//   const hero = await getHero();
-//   // const projects = await getProjects() // array
-//   // const skills = await getSkills() // array
-//   // const footer = await getFooter()
-//   return {
-//     props: {
-//       // hero, projects, skills, footer,
-//       hero,
-//     },
-//   };
-// }
+export async function getStaticProps () {
+  const { hero } = await getHomepage();
+
+  return {
+    props: {
+      hero,
+      // hero, projects, skills, footer,
+      //hero,
+    },
+  };
+}
