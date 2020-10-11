@@ -28,6 +28,7 @@ const Content = styled.section`
 `;
 
 const PromptWrap = styled.div``;
+
 const Container = styled.div`
   background: ${({ theme }) => theme.colors.primary};
   overflow: visible;

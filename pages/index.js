@@ -2,12 +2,13 @@ import Hero from '../components/Hero';
 import React from 'react';
 import styled from 'styled-components';
 import CtaButton from '../components/CtaButton';
-import { ContentMarginX, ContentMarginY, Panarama } from '../styles/utils';
+import { ContentMarginX, Panarama } from '../styles/utils';
 import Tag from '../components/Tag';
 import Thumbnail from '../components/Thumbnail';
 import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
-import { getHero } from '../lib/home';
+
+import ReactMarkdown from 'react-markdown';
 
 const TagGroup = styled.div`
   display: inline-flex;
@@ -76,19 +77,14 @@ const WhatIDo = styled.section`
   }
 `;
 
+const input = '# This is a **header** \n And this is a paragraph';
+
 export default function Home ({ hero }) {
   const router = useRouter();
   return (
     <>
       <Hero>
-        <h1>Hi, I’m Ethan,
-          <strong>Web Developer</strong> and <strong>Web Designer</strong>
-        </h1>
-        <p>
-          I design and build beautiful websites for businesses around the
-          globe. If you need a modern and powerful website, send me an email.
-          If we are a good fit, I will give you a time and cost estimate.
-        </p>
+        <ReactMarkdown source={input}/>
         <CtaButton onClick={() => router.push('/first-page')}/>
       </Hero>
 
@@ -136,15 +132,15 @@ export default function Home ({ hero }) {
   );
 }
 
-export async function getStaticProps () {
-  const hero = await getHero();
-  // const projects = await getProjects() // array
-  // const skills = await getSkills() // array
-  // const footer = await getFooter()
-  return {
-    props: {
-      // hero, projects, skills, footer,
-      hero,
-    },
-  };
-}
+// export async function getStaticProps () {
+//   const hero = await getHero();
+//   // const projects = await getProjects() // array
+//   // const skills = await getSkills() // array
+//   // const footer = await getFooter()
+//   return {
+//     props: {
+//       // hero, projects, skills, footer,
+//       hero,
+//     },
+//   };
+// }
