@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ContentMarginX, ContentMarginY } from '../../styles/utils';
+import { ContentMarginX } from '../../styles/utils';
 
 const Container = styled.footer`
   background: ${({ theme }) => theme.colors.primary};
