@@ -2,12 +2,13 @@ import Hero from '../components/Hero';
 import React from 'react';
 import styled from 'styled-components';
 import CtaButton from '../components/CtaButton';
-import { getHomepage, getHomePage } from '../data';
+import { get } from '../data';
 import { ContentMarginX, Panarama } from '../styles/utils';
 import Tag from '../components/Tag';
 import Thumbnail from '../components/Thumbnail';
 import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
+import { baseUrl } from '../data';
 
 import ReactMarkdown from 'react-markdown';
 
@@ -78,9 +79,7 @@ const WhatIDo = styled.section`
   }
 `;
 
-const input = '# This is a **header** \n And this is a paragraph';
-
-export default function Home ({ hero }) {
+export default function Home ({ hero, projects, whatIDo, footer }) {
   const router = useRouter();
   return (
     <>
@@ -89,58 +88,52 @@ export default function Home ({ hero }) {
         <CtaButton onClick={() => router.push('/first-page')}/>
       </Hero>
 
-      <Project>
+      {
+        projects.map(project => (
+          <Project>
+            <LatestWork_A>
+              <Panarama>latest work</Panarama>
+              <h1>{project.title}</h1>
+              <TagGroup>
+                <Tag>Website Design</Tag>
+                <Tag>Web Development</Tag>
+                <Tag>Concept</Tag>
+              </TagGroup>
+            </LatestWork_A>
+            <ThumbnailWrap>
+              <Thumbnail image={`${baseUrl}${project.thumbnail.url}`}/>
+            </ThumbnailWrap>
 
-        <LatestWork_A>
-          <Panarama>latest work</Panarama>
-          <h1>Chat App website</h1>
-          <TagGroup>
-            <Tag>Website Design</Tag>
-            <Tag>Web Development</Tag>
-            <Tag>Concept</Tag>
-          </TagGroup>
-        </LatestWork_A>
-
-        <ThumbnailWrap><Thumbnail/></ThumbnailWrap>
-
-        <LatestWork_B>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-            beatae culpa, doloribus esse ex laboriosam reprehenderit vitae? Ad
-            asperiores dolores doloribus eius enim ex officia porro, praesentium
-            quidem quis sit..</p>
-          <CtaButton onClick={() => router.push('/first-page')}/>
-        </LatestWork_B>
-
-      </Project>
+            <LatestWork_B>
+              <ReactMarkdown source={project.description}/>
+              <CtaButton onClick={() => router.push('/first-page')}/>
+            </LatestWork_B>
+          </Project>))
+      }
 
       <WhatIDo>
         <h1>What I <strong>Do</strong></h1>
         <div>
-          <h2>Design</h2>
-          <p>I design beautiful and powerful websites for modern businesses. Any
-            business today needs a website that wins customers’ trust and helps
-            you do your business well. I make sure your website is up to that
-            standard.</p>
-          <h2>Development</h2>
-          <p>I build websites in Webflow where I can create responsive, powerful
-            and fully custom websites. Plus, Webflow has an incredibly simple
-            Content Editor for you and your team to edit website content quickly
-            and easily.</p>
+          <ReactMarkdown source={whatIDo}/>
         </div>
       </WhatIDo>
-      <Footer/>
+      <Footer>
+        <ReactMarkdown source={footer}/>
+      </Footer>
     </>
   );
 }
 
 export async function getStaticProps () {
-  const { hero } = await getHomepage();
-
+  const { hero, whatIDo } = await get(`/homepage`);
+  const projects = await get(`/projects`);
+  const { footer } = await get(`/common`);
   return {
     props: {
       hero,
-      // hero, projects, skills, footer,
-      //hero,
+      whatIDo,
+      projects,
+      footer,
     },
   };
 }

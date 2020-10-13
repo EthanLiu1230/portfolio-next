@@ -15,7 +15,6 @@ const Content = styled.div`
   ${ContentMarginX};
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 4rem;
 
   @media (max-width: 960px) {
     grid-template-columns: 1fr;
@@ -35,19 +34,11 @@ const Reserved = styled.div`
   bottom: 0;
 `;
 
-const Footer = () => {
+const Footer = ({ children }) => {
   return (
     <Container>
       <Content>
-        <h1>
-          Want to <strong>work?</strong>
-        </h1>
-        <p>
-          If you need a modern and powerful website for your business, startup
-          or
-          personally, I am available for work. You can email me directly at
-          <a href={`mailto:dev_ethan@outlook.com`}> dev_ethan@outlook.com.</a>
-        </p>
+        {children}
       </Content>
       <Reserved>
         © All right reserved – Ethan.Liu
