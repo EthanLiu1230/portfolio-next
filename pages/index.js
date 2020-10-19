@@ -2,7 +2,7 @@ import Hero from '../components/Hero';
 import React from 'react';
 import styled from 'styled-components';
 import CtaButton from '../components/CtaButton';
-import { get, getFooter } from '../data';
+import { get, getData, getFooter } from '../data';
 import { ContentMarginX, Panarama } from '../styles/utils';
 import Tag from '../components/Tag';
 import Thumbnail from '../components/Thumbnail';
@@ -80,14 +80,14 @@ const WhatIDo = styled.section`
   }
 `;
 
-export default function Home({ footer }) {
+export default function Home({ footer, hero, what_i_do }) {
   const router = useRouter();
   return (
     <>
-      {/*<Hero>*/}
-      {/*  <ReactMarkdown source={hero}/>*/}
-      {/*  <CtaButton onClick={() => router.push('/first-page')}/>*/}
-      {/*</Hero>*/}
+      <Hero>
+        {ReactHtmlParser(hero)}
+        <CtaButton onClick={() => router.push('/first-page')}/>
+      </Hero>
 
       {/*{*/}
       {/*  projects.map(project => (*/}
@@ -112,12 +112,12 @@ export default function Home({ footer }) {
       {/*    </Project>))*/}
       {/*}*/}
 
-      {/*<WhatIDo>*/}
-      {/*  <h1>What I <strong>Do</strong></h1>*/}
-      {/*  <div>*/}
-      {/*    <ReactMarkdown source={whatIDo}/>*/}
-      {/*  </div>*/}
-      {/*</WhatIDo>*/}
+      <WhatIDo>
+        <h1>What I <strong>Do</strong></h1>
+        <div>
+          {ReactHtmlParser(what_i_do)}
+        </div>
+      </WhatIDo>
       <Footer>
         {ReactHtmlParser(footer)}
       </Footer>
@@ -127,9 +127,11 @@ export default function Home({ footer }) {
 
 export async function getStaticProps() {
   const footer = await getFooter();
+  const { hero, what_i_do } = await getData('/homepage');
   return {
     props: {
       footer,
+      hero, what_i_do,
     },
   };
 }

@@ -4,13 +4,10 @@ export const BASE_URL = 'http://localhost:8080/_example/items';
 axios.defaults.baseURL = BASE_URL;
 
 export const getData = async (endpoint) => {
-  const { data } = await axios.get(endpoint);
-  return data.data;
+  return (await axios.get(endpoint)).data.data[0];
 };
 
 export const getFooter = async () => {
-  const res = await axios.get('/common');
-  const data = res.data.data;
-  const [{ footer }] = data;
+  const { footer } = await getData('/common');
   return footer;
 };
