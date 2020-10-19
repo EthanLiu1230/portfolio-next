@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ContentMarginX } from '../../styles/utils';
+import { ContentMarginX, ContentMarginY } from '../../styles/utils';
 
 const Container = styled.footer`
   background: ${({ theme }) => theme.colors.primary};
@@ -12,6 +12,7 @@ const Container = styled.footer`
 `;
 
 const Content = styled.div`
+  margin-top: 2rem;
   ${ContentMarginX};
   display: grid;
   grid-template-columns: 1fr 1fr;
