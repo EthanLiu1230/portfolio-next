@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
 
 import ReactHtmlParser from 'react-html-parser';
-import { client } from '../data/directus';
+import { client, getProjects } from '../data/directus';
 
 const TagGroup = styled.div`
   display: inline-flex;
@@ -78,7 +78,7 @@ const WhatIDo = styled.section`
   }
 `;
 
-export default function Home({ footer, hero, what_i_do }) {
+export default function Home({ footer, hero, what_i_do, projects }) {
   const router = useRouter();
   return (
     <>
@@ -87,28 +87,28 @@ export default function Home({ footer, hero, what_i_do }) {
         <CtaButton onClick={() => router.push('/first-page')}/>
       </Hero>
 
-      {/*{*/}
-      {/*  projects.map(project => (*/}
-      {/*    <Project>*/}
-      {/*      <LatestWork_A>*/}
-      {/*        <Panarama>latest work</Panarama>*/}
-      {/*        <h1>{project.title}</h1>*/}
-      {/*        <TagGroup>*/}
-      {/*          <Tag>Website Design</Tag>*/}
-      {/*          <Tag>Web Development</Tag>*/}
-      {/*          <Tag>Concept</Tag>*/}
-      {/*        </TagGroup>*/}
-      {/*      </LatestWork_A>*/}
-      {/*      <ThumbnailWrap>*/}
-      {/*        <Thumbnail image={`${baseUrl}${project.thumbnail.url}`}/>*/}
-      {/*      </ThumbnailWrap>*/}
+      {
+        projects.map(({ id, title, description, tags, preview }) => (
+          <Project key={id}>
+            <LatestWork_A>
+              <Panarama>latest work</Panarama>
+              <h1>{title}</h1>
+              <TagGroup>
+                {tags.map(tag => (
+                  <Tag>{tag}</Tag>
+                ))}
+              </TagGroup>
+            </LatestWork_A>
+            <ThumbnailWrap>
+              <Thumbnail image={preview}/>
+            </ThumbnailWrap>
 
-      {/*      <LatestWork_B>*/}
-      {/*        <ReactMarkdown source={project.description}/>*/}
-      {/*        <CtaButton onClick={() => router.push('/first-page')}/>*/}
-      {/*      </LatestWork_B>*/}
-      {/*    </Project>))*/}
-      {/*}*/}
+            <LatestWork_B>
+              <p>{description}</p>
+              <CtaButton onClick={() => router.push('/first-page')}/>
+            </LatestWork_B>
+          </Project>))
+      }
 
       <WhatIDo>
         <h1>What I <strong>Do</strong></h1>
@@ -126,13 +126,13 @@ export default function Home({ footer, hero, what_i_do }) {
 export async function getStaticProps() {
   const { data: [{ footer }] } = await client.getItems('common');
   const { data: [{ hero, what_i_do }] } = await client.getItems('homepage');
-  const { data: [{ file: { data: { full_url } } }] } = await client.getItems(
-    'image', { fields: 'file.data' });
-  console.log(full_url);
+
+  const projects = await getProjects();
   return {
     props: {
       footer,
       hero, what_i_do,
+      projects,
     },
   };
 }
