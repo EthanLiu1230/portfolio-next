@@ -29,7 +29,7 @@ const Button = styled.button`
   text-transform: lowercase;
   
   transition-property: all;
-  transition-duration: .2s;
+  transition-duration: .4s;
 
   :hover {
     cursor: pointer;

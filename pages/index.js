@@ -8,7 +8,6 @@ import Thumbnail from '../components/Thumbnail';
 import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
 
-import ReactMarkdown from 'react-markdown';
 import ReactHtmlParser from 'react-html-parser';
 import { client } from '../data/directus';
 
@@ -127,6 +126,9 @@ export default function Home({ footer, hero, what_i_do }) {
 export async function getStaticProps() {
   const { data: [{ footer }] } = await client.getItems('common');
   const { data: [{ hero, what_i_do }] } = await client.getItems('homepage');
+  const { data: [{ file: { data: { full_url } } }] } = await client.getItems(
+    'image', { fields: 'file.data' });
+  console.log(full_url);
   return {
     props: {
       footer,
