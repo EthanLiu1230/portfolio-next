@@ -22,7 +22,12 @@ const TagGroup = styled.div`
 
 const LatestWork_A = styled.div``;
 
-const LatestWork_B = styled.div``;
+const LatestWork_B = styled.div`
+  margin: 0;
+  > p {
+    margin-top: 1rem;
+  }
+`;
 
 const ThumbnailWrap = styled.div``;
 
@@ -38,7 +43,7 @@ const Project = styled.section`
   
   @media (min-width: 960px) {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
     grid-column-gap: 4rem;
     grid-row-gap: 0;
     
@@ -53,7 +58,7 @@ const Project = styled.section`
       grid-column: 1/2;
     }    
     ${LatestWork_B} {
-      grid-row: 2/3;
+      grid-row: 2/4;
       grid-column: 1/2;
     }
   }
@@ -94,8 +99,8 @@ export default function Home({ footer, hero, what_i_do, projects }) {
               <Panarama>latest work</Panarama>
               <h1>{title}</h1>
               <TagGroup>
-                {tags.map(tag => (
-                  <Tag>{tag}</Tag>
+                {tags.map((tag, index) => (
+                  <Tag key={index}>{tag}</Tag>
                 ))}
               </TagGroup>
             </LatestWork_A>
