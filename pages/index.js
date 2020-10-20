@@ -2,16 +2,15 @@ import Hero from '../components/Hero';
 import React from 'react';
 import styled from 'styled-components';
 import CtaButton from '../components/CtaButton';
-import { get, getData, getFooter } from '../data';
 import { ContentMarginX, Panarama } from '../styles/utils';
 import Tag from '../components/Tag';
 import Thumbnail from '../components/Thumbnail';
 import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
-import { baseUrl } from '../data';
 
 import ReactMarkdown from 'react-markdown';
 import ReactHtmlParser from 'react-html-parser';
+import { client } from '../data/directus';
 
 const TagGroup = styled.div`
   display: inline-flex;
@@ -126,8 +125,8 @@ export default function Home({ footer, hero, what_i_do }) {
 }
 
 export async function getStaticProps() {
-  const footer = await getFooter();
-  const { hero, what_i_do } = await getData('/homepage');
+  const { data: [{ footer }] } = await client.getItems('common');
+  const { data: [{ hero, what_i_do }] } = await client.getItems('homepage');
   return {
     props: {
       footer,
