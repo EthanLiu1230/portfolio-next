@@ -87,57 +87,57 @@ export default function Home({ footer, hero, what_i_do, projects }) {
   const router = useRouter();
   return (
     <>
-      <Hero>
-        {ReactHtmlParser(hero)}
-        <CtaButton onClick={() => router.push('/first-page')}/>
-      </Hero>
+      {/*<Hero>*/}
+      {/*  {ReactHtmlParser(hero)}*/}
+      {/*  <CtaButton onClick={() => router.push('/first-page')}/>*/}
+      {/*</Hero>*/}
 
-      {
-        projects.map(({ id, title, description, tags, preview }) => (
-          <Project key={id}>
-            <LatestWork_A>
-              <Panarama>latest work</Panarama>
-              <h1>{title}</h1>
-              <TagGroup>
-                {tags.map((tag, index) => (
-                  <Tag key={index}>{tag}</Tag>
-                ))}
-              </TagGroup>
-            </LatestWork_A>
-            <ThumbnailWrap>
-              <Thumbnail image={preview}/>
-            </ThumbnailWrap>
+      {/*{*/}
+      {/*  projects.map(({ id, title, description, tags, preview }) => (*/}
+      {/*    <Project key={id}>*/}
+      {/*      <LatestWork_A>*/}
+      {/*        <Panarama>latest work</Panarama>*/}
+      {/*        <h1>{title}</h1>*/}
+      {/*        <TagGroup>*/}
+      {/*          {tags.map((tag, index) => (*/}
+      {/*            <Tag key={index}>{tag}</Tag>*/}
+      {/*          ))}*/}
+      {/*        </TagGroup>*/}
+      {/*      </LatestWork_A>*/}
+      {/*      <ThumbnailWrap>*/}
+      {/*        <Thumbnail image={preview}/>*/}
+      {/*      </ThumbnailWrap>*/}
 
-            <LatestWork_B>
-              <p>{description}</p>
-              <CtaButton onClick={() => router.push('/first-page')}/>
-            </LatestWork_B>
-          </Project>))
-      }
+      {/*      <LatestWork_B>*/}
+      {/*        <p>{description}</p>*/}
+      {/*        <CtaButton onClick={() => router.push('/first-page')}/>*/}
+      {/*      </LatestWork_B>*/}
+      {/*    </Project>))*/}
+      {/*}*/}
 
-      <WhatIDo>
-        <h1>What I <strong>Do</strong></h1>
-        <div>
-          {ReactHtmlParser(what_i_do)}
-        </div>
-      </WhatIDo>
-      <Footer>
-        {ReactHtmlParser(footer)}
-      </Footer>
+      {/*<WhatIDo>*/}
+      {/*  <h1>What I <strong>Do</strong></h1>*/}
+      {/*  <div>*/}
+      {/*    {ReactHtmlParser(what_i_do)}*/}
+      {/*  </div>*/}
+      {/*</WhatIDo>*/}
+      {/*<Footer>*/}
+      {/*  {ReactHtmlParser(footer)}*/}
+      {/*</Footer>*/}
     </>
   );
 }
-
-export async function getStaticProps() {
-  const { data: [{ footer }] } = await client.getItems('common');
-  const { data: [{ hero, what_i_do }] } = await client.getItems('homepage');
-
-  const projects = await getProjects();
-  return {
-    props: {
-      footer,
-      hero, what_i_do,
-      projects,
-    },
-  };
-}
+//
+// export async function getStaticProps() {
+//   const { data: [{ footer }] } = await client.getItems('common');
+//   const { data: [{ hero, what_i_do }] } = await client.getItems('homepage');
+//
+//   const projects = await getProjects();
+//   return {
+//     props: {
+//       footer,
+//       hero, what_i_do,
+//       projects,
+//     },
+//   };
+// }
