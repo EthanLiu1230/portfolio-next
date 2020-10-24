@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
 
 import ReactHtmlParser from 'react-html-parser';
-import { client, getProjects } from '../data/directus';
+import { homeData } from '../content/markdown/index';
 
 const TagGroup = styled.div`
   display: inline-flex;
@@ -83,14 +83,14 @@ const WhatIDo = styled.section`
   }
 `;
 
-export default function Home({ footer, hero, what_i_do, projects }) {
+export default function Home({ homeData: { footer, hero, what_i_do } }) {
   const router = useRouter();
   return (
     <>
-      {/*<Hero>*/}
-      {/*  {ReactHtmlParser(hero)}*/}
-      {/*  <CtaButton onClick={() => router.push('/first-page')}/>*/}
-      {/*</Hero>*/}
+      <Hero>
+        {ReactHtmlParser(hero)}
+        <CtaButton onClick={() => router.push('/first-page')}/>
+      </Hero>
 
       {/*{*/}
       {/*  projects.map(({ id, title, description, tags, preview }) => (*/}
@@ -141,3 +141,11 @@ export default function Home({ footer, hero, what_i_do, projects }) {
 //     },
 //   };
 // }
+
+export async function getStaticProps() {
+  return {
+    props: {
+      homeData,
+    },
+  };
+}

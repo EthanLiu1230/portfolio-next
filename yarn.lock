@@ -6930,7 +6930,7 @@ markdown-escapes@^1.0.0:
 
 markdown-it@^11.0.0:
   version "11.0.1"
-  resolved "https://registry.npm.taobao.org/markdown-it/download/markdown-it-11.0.1.tgz?cache=0&sync_timestamp=1603472802255&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmarkdown-it%2Fdownload%2Fmarkdown-it-11.0.1.tgz#b54f15ec2a2193efa66dda1eb4173baea08993d6"
+  resolved "https://registry.npm.taobao.org/markdown-it/download/markdown-it-11.0.1.tgz#b54f15ec2a2193efa66dda1eb4173baea08993d6"
   integrity sha1-tU8V7Cohk++mbdoetBc7rqCJk9Y=
   dependencies:
     argparse "^1.0.7"
