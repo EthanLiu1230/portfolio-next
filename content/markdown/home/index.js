@@ -1,4 +1,4 @@
-import hero from 'hero.md';
+import hero from './hero.md';
 import whatIDo from './whatIDo.md';
 import { footer } from '../common';
 

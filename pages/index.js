@@ -7,9 +7,9 @@ import Tag from '../components/Tag';
 import Thumbnail from '../components/Thumbnail';
 import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
+import homeContent from '../content/markdown/home';
 
 import ReactHtmlParser from 'react-html-parser';
-import { homeData } from '../content/markdown/index';
 
 const TagGroup = styled.div`
   display: inline-flex;
@@ -83,7 +83,7 @@ const WhatIDo = styled.section`
   }
 `;
 
-export default function Home({ homeData: { footer, hero, what_i_do } }) {
+export default function Home({ hero, whatIDo, footer }) {
   const router = useRouter();
   return (
     <>
@@ -115,15 +115,15 @@ export default function Home({ homeData: { footer, hero, what_i_do } }) {
       {/*    </Project>))*/}
       {/*}*/}
 
-      {/*<WhatIDo>*/}
-      {/*  <h1>What I <strong>Do</strong></h1>*/}
-      {/*  <div>*/}
-      {/*    {ReactHtmlParser(what_i_do)}*/}
-      {/*  </div>*/}
-      {/*</WhatIDo>*/}
-      {/*<Footer>*/}
-      {/*  {ReactHtmlParser(footer)}*/}
-      {/*</Footer>*/}
+      <WhatIDo>
+        <h1>What I <strong>Do</strong></h1>
+        <div>
+          {ReactHtmlParser(whatIDo)}
+        </div>
+      </WhatIDo>
+      <Footer>
+        {ReactHtmlParser(footer)}
+      </Footer>
     </>
   );
 }
@@ -143,9 +143,9 @@ export default function Home({ homeData: { footer, hero, what_i_do } }) {
 // }
 
 export async function getStaticProps() {
+  const { hero, whatIDo, footer } = homeContent;
+
   return {
-    props: {
-      homeData,
-    },
+    props: { hero, whatIDo, footer },
   };
 }
