@@ -7,7 +7,7 @@ import Tag from '../components/Tag';
 import Thumbnail from '../components/Thumbnail';
 import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
-import homeContent from '../markdown/home';
+import homeContent from '../content/home';
 
 import ReactHtmlParser from 'react-html-parser';
 

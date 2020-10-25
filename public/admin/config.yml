@@ -9,22 +9,22 @@ collections:
     files:
       - name: 'whatIdo'
         label: 'What I Do'
-        file: 'markdown/home/whatIDo.md'
+        file: 'content/home/whatIDo.md'
         fields:
-          - {label: 'Body', name: 'body', widget: 'markdown'}
+          - {label: 'Body', name: 'body', widget: 'content'}
       - name: 'hero'
         label: 'Hero'
-        file: 'markdown/home/hero.md'
+        file: 'content/home/hero.md'
         fields:
-          - {label: 'Body', name: 'body', widget: 'markdown'}
+          - {label: 'Body', name: 'body', widget: 'content'}
   - name: 'common'
     label: 'Common'
     files:
       - label: 'Footer'
         name: 'footer'
-        file: 'markdown/common/footer.md'
+        file: 'content/common/footer.md'
         fields:
-          - { label: 'Body', name: 'body', widget: 'markdown'}
+          - { label: 'Body', name: 'body', widget: 'content'}
 
 
 
@@ -33,11 +33,11 @@ collections:
 #    files:
 #      - label: 't'
 #        name: 't'
-#        file: 'markdown/home.md'
+#        file: 'content/home.md'
 #        fields:
 #          - { label: 'Title', name: 'title', widget: 'string'}
 #          - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-#          - { label: 'Body', name: 'body', widget: 'markdown'}
+#          - { label: 'Body', name: 'body', widget: 'content'}
 #          - label: 'Cats'
 #            name: 'cats'
 #            widget: list
