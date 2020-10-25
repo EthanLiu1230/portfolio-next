@@ -4,41 +4,43 @@ backend:
 media_folder: public/img
 public_folder: img
 collections:
-  - name: "homepage"
-    label: "Homepage"
+  - name: 'homepage'
+    label: 'Homepage'
     files:
-      - name: "whatIdo"
-        label: "What I Do"
-        file: "content/markdown/home/whatIDo.md"
+      - name: 'whatIdo'
+        label: 'What I Do'
+        file: 'markdown/home/whatIDo.md'
         fields:
-          - {label: "Body", name: "body", widget: "markdown"}
-      - name: "hero"
-        label: "Hero"
-        file: "content/markdown/home/hero.md"
+          - {label: 'Body', name: 'body', widget: 'markdown'}
+      - name: 'hero'
+        label: 'Hero'
+        file: 'markdown/home/hero.md'
         fields:
-          - {label: "Body", name: "body", widget: "markdown"}
-  - name: "common"
-    label: "Common"
+          - {label: 'Body', name: 'body', widget: 'markdown'}
+  - name: 'common'
+    label: 'Common'
     files:
-      - label: "Footer"
-        name: "footer"
-        file: "content/markdown/common/footer.md"
+      - label: 'Footer'
+        name: 'footer'
+        file: 'markdown/common/footer.md'
         fields:
-          - { label: "Body", name: "body", widget: "markdown"}
+          - { label: 'Body', name: 'body', widget: 'markdown'}
 
-#  - name: "pages"
-#    label: "Pages"
+
+
+#  - name: 'pages'
+#    label: 'Pages'
 #    files:
-#      - label: "t"
-#        name: "t"
-#        file: "content/markdown/home.md"
+#      - label: 't'
+#        name: 't'
+#        file: 'markdown/home.md'
 #        fields:
-#          - { label: "Title", name: "title", widget: "string"}
-#          - { label: "Publish Date", name: "date", widget: "datetime" }
-#          - { label: "Body", name: "body", widget: "markdown"}
+#          - { label: 'Title', name: 'title', widget: 'string'}
+#          - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+#          - { label: 'Body', name: 'body', widget: 'markdown'}
 #          - label: 'Cats'
-#            name: "cats"
+#            name: 'cats'
 #            widget: list
 #            fields:
-#              - { label: "Name", name: "name", widget: "string"}
-#              - { label: "Description", name: "description", widget: "text"}
+#              - { label: 'Name', name: 'name', widget: 'string'}
+#              - { label: 'Description', name: 'description', widget: 'text'}
