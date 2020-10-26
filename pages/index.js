@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
 import ReactHtmlParser from 'react-html-parser';
 import { getHomepage } from '../lib/content';
+import Thumbnail from '../components/Thumbnail';
 
 const TagGroup = styled.div`
   display: inline-flex;
@@ -86,7 +87,7 @@ export default function Homepage({ hero, whatIDo, footer, projects }) {
       </Hero>
 
       {
-        projects.map(({ id, title, html, tags }) => (
+        projects.map(({ id, title, html, tags, preview }) => (
           <Project key={id}>
             <LatestWork_A>
               <Panarama>latest work</Panarama>
@@ -97,9 +98,9 @@ export default function Homepage({ hero, whatIDo, footer, projects }) {
                 ))}
               </TagGroup>
             </LatestWork_A>
-            {/*<ThumbnailWrap>*/}
-            {/*  <Thumbnail image={preview}/>*/}
-            {/*</ThumbnailWrap>*/}
+            <ThumbnailWrap>
+              <Thumbnail image={preview}/>
+            </ThumbnailWrap>
 
             <LatestWork_B>
               {ReactHtmlParser(html)}
