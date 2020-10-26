@@ -1,7 +1,7 @@
-import React from 'react'
-import ForwardArrow from './assets/ForwardArrow.svg'
-import Dots from './assets/Dots.svg'
-import styled from 'styled-components'
+import React from 'react';
+import ForwardArrow from './assets/ForwardArrow.svg';
+import Dots from './assets/Dots.svg';
+import styled from 'styled-components';
 
 const Prompt = styled.div`
   display: flex;
@@ -28,13 +28,13 @@ const Prompt = styled.div`
   transition-duration: .4s;
   transition-delay: .1s;
   transition-timing-function: ease-in-out;
-`
+`;
 
 const DotsWrapper = styled.div`
   position: absolute;
   bottom: -27px;
   left: -23px;
-`
+`;
 
 const ImageWrapper = styled.div`
     
@@ -44,8 +44,10 @@ const ImageWrapper = styled.div`
   background: ${({ theme }) => theme.colors.primary};
   
   width: 100%;
+  height: fit-content;
   
   img {
+    object-fit: contain;
     max-width: 100%;
     height: auto;
   }
@@ -53,7 +55,7 @@ const ImageWrapper = styled.div`
   transition-property: all;
   transition-duration: .4s;
   transition-timing-function: ease-in-out;
-`
+`;
 
 const Container = styled.div`
   width: 100%;
@@ -74,7 +76,7 @@ const Container = styled.div`
       opacity: 1;
     }
   }
-`
+`;
 
 const Thumbnail = ({ image }) => {
   return (
@@ -86,13 +88,13 @@ const Thumbnail = ({ image }) => {
         <ForwardArrow/>
       </Prompt>
     </Container>
-  )
-}
+  );
+};
 
-Thumbnail.propTypes = {}
+Thumbnail.propTypes = {};
 
 Thumbnail.defaultProps = {
   image: '/images/project-preview.png',
-}
+};
 
-export default Thumbnail
+export default Thumbnail;
