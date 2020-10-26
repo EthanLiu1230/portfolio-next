@@ -7,9 +7,8 @@ import Tag from '../components/Tag';
 import Thumbnail from '../components/Thumbnail';
 import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
-import homeContent from '../content/home';
-
 import ReactHtmlParser from 'react-html-parser';
+import { getHomepage } from '../lib/content';
 
 const TagGroup = styled.div`
   display: inline-flex;
@@ -19,18 +18,14 @@ const TagGroup = styled.div`
     margin-bottom: .6rem;
   }
 `;
-
 const LatestWork_A = styled.div``;
-
 const LatestWork_B = styled.div`
   margin: 0;
   > p {
     margin-top: 1rem;
   }
 `;
-
 const ThumbnailWrap = styled.div``;
-
 const Project = styled.section`
   ${ContentMarginX};
   margin-bottom: 10rem;
@@ -63,7 +58,6 @@ const Project = styled.section`
     }
   }
 `;
-
 const WhatIDo = styled.section`
   ${ContentMarginX};
   margin-top: 10rem;
@@ -83,12 +77,12 @@ const WhatIDo = styled.section`
   }
 `;
 
-export default function Home({ hero, whatIDo, footer }) {
+export default function Homepage({ hero, whatIDo, footer }) {
   const router = useRouter();
   return (
     <>
       <Hero>
-        {ReactHtmlParser(hero)}
+        {ReactHtmlParser(hero.html)}
         <CtaButton onClick={() => router.push('/first-page')}/>
       </Hero>
 
@@ -118,34 +112,22 @@ export default function Home({ hero, whatIDo, footer }) {
       <WhatIDo>
         <h1>What I <strong>Do</strong></h1>
         <div>
-          {ReactHtmlParser(whatIDo)}
+          {ReactHtmlParser(whatIDo.html)}
         </div>
       </WhatIDo>
       <Footer>
-        {ReactHtmlParser(footer)}
+        {ReactHtmlParser(footer.html)}
       </Footer>
     </>
   );
-}
-//
-// export async function getStaticProps() {
-//   const { data: [{ footer }] } = await client.getItems('common');
-//   const { data: [{ hero, what_i_do }] } = await client.getItems('homepage');
-//
-//   const projects = await getProjects();
-//   return {
-//     props: {
-//       footer,
-//       hero, what_i_do,
-//       projects,
-//     },
-//   };
-// }
+};
 
 export async function getStaticProps() {
-  const { hero, whatIDo, footer } = homeContent;
-
+  const { hero, whatIDo, footer } = await getHomepage();
   return {
-    props: { hero, whatIDo, footer },
+    props: {
+      hero, whatIDo, footer,
+    },
   };
 }
+
