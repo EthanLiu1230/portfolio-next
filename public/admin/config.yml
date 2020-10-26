@@ -11,12 +11,12 @@ collections:
         label: 'What I Do'
         file: 'content/home/whatIDo.md'
         fields:
-          - {label: 'Body', name: 'body', widget: 'content'}
+          - {label: 'Body', name: 'body', widget: 'markdown'}
       - name: 'hero'
         label: 'Hero'
         file: 'content/home/hero.md'
         fields:
-          - {label: 'Body', name: 'body', widget: 'content'}
+          - {label: 'Body', name: 'body', widget: 'markdown'}
   - name: 'common'
     label: 'Common'
     files:
@@ -24,8 +24,31 @@ collections:
         name: 'footer'
         file: 'content/common/footer.md'
         fields:
-          - { label: 'Body', name: 'body', widget: 'content'}
+          - { label: 'Body', name: 'body', widget: 'markdown'}
+  - name: 'projects'
+    label: 'Projects'
+    folder: 'content/projects'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - {label: 'Title', name: 'title', widget: 'string'}
+      - {label: 'Tags', name: 'tags', widget: 'list', allow_add: true, default: []}
+      - {label: 'Body', name: 'body', widget: 'markdown'}
+      - {label: 'Project Preview', name: 'preview', widget: 'image', default: '/img/project-preview.png'}
+      - {label: 'Project Detail', name: 'detail', widget: 'image', default: '/img/project-detail.png'}
 
+#  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+#    label: "BlogPost" # Used in the UI
+#    folder: "posts" # The path to the folder where the markdown files are stored
+#    create: true # Allow users to create new markdown files.
+#    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+#    fields: # The fields for front matter. You will need to modify fields according to your project.
+#      - {label: "Title", name: "title", widget: "string"}
+#      - {label: "Description", name: "description", widget: "string"}
+#      - {label: "Download", name: "download", widget: "string"}
+#      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+#      - {label: "Author", name: "author", widget: "string", default: "Admin"}
+#      - {label: "Body", name: "body", widget: "markdown"}
 
 
 #  - name: 'pages'
@@ -37,7 +60,7 @@ collections:
 #        fields:
 #          - { label: 'Title', name: 'title', widget: 'string'}
 #          - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-#          - { label: 'Body', name: 'body', widget: 'content'}
+#          - { label: 'Body', name: 'body', widget: 'markdown'}
 #          - label: 'Cats'
 #            name: 'cats'
 #            widget: list
