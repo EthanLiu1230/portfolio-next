@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import CtaButton from '../components/CtaButton';
 import { ContentMarginX, Panarama } from '../styles/utils';
 import Tag from '../components/Tag';
-import Thumbnail from '../components/Thumbnail';
 import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
 import ReactHtmlParser from 'react-html-parser';
@@ -28,8 +27,8 @@ const LatestWork_B = styled.div`
 const ThumbnailWrap = styled.div``;
 const Project = styled.section`
   ${ContentMarginX};
-  margin-bottom: 10rem;
-  margin-top: 10rem;
+  margin-top: 12rem;
+  margin-bottom: 12rem;
 
   display: grid;
   grid-template-columns: 1fr;
@@ -103,7 +102,7 @@ export default function Homepage({ hero, whatIDo, footer, projects }) {
             {/*</ThumbnailWrap>*/}
 
             <LatestWork_B>
-              <p>{ReactHtmlParser(html)}</p>
+              {ReactHtmlParser(html)}
               <CtaButton onClick={() => router.push('/first-page')}/>
             </LatestWork_B>
           </Project>))
