@@ -1,4 +1,8 @@
-import { getAllFileIds, projectsDirectory } from '../../lib/content';
+import {
+  getAllFileIds,
+  getProjectIds,
+  projectsDirectory,
+} from '../../lib/content';
 
 export default function Project({ params }) {
   return (
@@ -8,7 +12,7 @@ export default function Project({ params }) {
 }
 
 export async function getStaticPaths() {
-  const paths = getAllFileIds(projectsDirectory);
+  const paths = getProjectIds();
   return {
     paths,
     fallback: false,
