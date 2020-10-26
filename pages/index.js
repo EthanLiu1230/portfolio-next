@@ -77,7 +77,7 @@ const WhatIDo = styled.section`
   }
 `;
 
-export default function Homepage({ hero, whatIDo, footer }) {
+export default function Homepage({ hero, whatIDo, footer, projects }) {
   const router = useRouter();
   return (
     <>
@@ -86,28 +86,28 @@ export default function Homepage({ hero, whatIDo, footer }) {
         <CtaButton onClick={() => router.push('/first-page')}/>
       </Hero>
 
-      {/*{*/}
-      {/*  projects.map(({ id, title, description, tags, preview }) => (*/}
-      {/*    <Project key={id}>*/}
-      {/*      <LatestWork_A>*/}
-      {/*        <Panarama>latest work</Panarama>*/}
-      {/*        <h1>{title}</h1>*/}
-      {/*        <TagGroup>*/}
-      {/*          {tags.map((tag, index) => (*/}
-      {/*            <Tag key={index}>{tag}</Tag>*/}
-      {/*          ))}*/}
-      {/*        </TagGroup>*/}
-      {/*      </LatestWork_A>*/}
-      {/*      <ThumbnailWrap>*/}
-      {/*        <Thumbnail image={preview}/>*/}
-      {/*      </ThumbnailWrap>*/}
+      {
+        projects.map(({ id, title, html, tags }) => (
+          <Project key={id}>
+            <LatestWork_A>
+              <Panarama>latest work</Panarama>
+              <h1>{title}</h1>
+              <TagGroup>
+                {tags.map((tag, index) => (
+                  <Tag key={index}>{tag}</Tag>
+                ))}
+              </TagGroup>
+            </LatestWork_A>
+            {/*<ThumbnailWrap>*/}
+            {/*  <Thumbnail image={preview}/>*/}
+            {/*</ThumbnailWrap>*/}
 
-      {/*      <LatestWork_B>*/}
-      {/*        <p>{description}</p>*/}
-      {/*        <CtaButton onClick={() => router.push('/first-page')}/>*/}
-      {/*      </LatestWork_B>*/}
-      {/*    </Project>))*/}
-      {/*}*/}
+            <LatestWork_B>
+              <p>{ReactHtmlParser(html)}</p>
+              <CtaButton onClick={() => router.push('/first-page')}/>
+            </LatestWork_B>
+          </Project>))
+      }
 
       <WhatIDo>
         <h1>What I <strong>Do</strong></h1>
@@ -123,10 +123,10 @@ export default function Homepage({ hero, whatIDo, footer }) {
 };
 
 export async function getStaticProps() {
-  const { hero, whatIDo, footer } = await getHomepage();
+  const { hero, whatIDo, footer, projects } = await getHomepage();
   return {
     props: {
-      hero, whatIDo, footer,
+      hero, whatIDo, footer, projects,
     },
   };
 }
