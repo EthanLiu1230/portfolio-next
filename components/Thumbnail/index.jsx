@@ -47,7 +47,7 @@ const ImageWrapper = styled.div`
   height: fit-content;
   
   img {
-    object-fit: contain;
+    object-fit: cover;
     max-width: 100%;
     height: auto;
   }
