@@ -11,21 +11,6 @@ const Container = styled.footer`
   position: relative;
 `;
 
-const Content = styled.div`
-  ${ContentMarginX};
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 2rem;
-  align-content: start;
-  > h1 {
-    padding-top: 1.5rem;
-  }
-
-  @media (max-width: 960px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
 const Reserved = styled.div`
   display: block;
   color: black;
@@ -37,6 +22,29 @@ const Reserved = styled.div`
   
   position: absolute;
   bottom: 0;
+`;
+
+const Content = styled.footer`
+  ${ContentMarginX};
+  margin-top: 3rem;
+  margin-bottom: 8rem;
+  h1 {
+    transform: translateX(-6px);
+    margin-bottom: 4rem;
+  }
+  
+  p {
+    transform: translateY(-1.5rem);
+  }
+  
+  @media (min-width: 1100px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    h1 {
+      transform: none;
+      grid-column: 1/2;
+    }
+  }
 `;
 
 const Footer = ({ children }) => {
