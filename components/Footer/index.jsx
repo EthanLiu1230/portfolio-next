@@ -17,10 +17,10 @@ const Reserved = styled.div`
   font-size: 14px;
   opacity: 50%;
   line-height: 1.8;
-  margin-left: 10%;
+  ${ContentMarginX};
   margin-bottom: 24px;
   
-  position: absolute;
+  position: relative;
   bottom: 0;
 `;
 
